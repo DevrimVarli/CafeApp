@@ -56,6 +56,7 @@ dependencies:
   cloud_firestore: ^6.1.1
   fluttertoast: ^9.0.0
   google_sign_in: ^6.1.5
+  icons_launcher: ^3.0.3
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -75,6 +76,7 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
+
 flutter:
 
   # The following line ensures that the Material Icons font is

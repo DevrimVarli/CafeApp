@@ -190,53 +190,56 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
                   // Dinamik Size Selector
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: List<Widget>.generate(widget.coffieModel.sizes.length, (
-                      int index,
-                    ) {
-                      CoffieSizeModel sizeItem =
-                          widget.coffieModel.sizes[index];
-                      // Görsel seçim kontrolünü de safeIndex ile yapıyoruz
-                      // Böylece hata durumunda ilk eleman seçili görünür.
-                      bool isSelected = safeIndex == index;
+                    children: List<Widget>.generate(
+                      widget.coffieModel.sizes.length,
+                      (int index) {
+                        CoffieSizeModel sizeItem =
+                            widget.coffieModel.sizes[index];
+                        // Görsel seçim kontrolünü de safeIndex ile yapıyoruz
+                        // Böylece hata durumunda ilk eleman seçili görünür.
+                        bool isSelected = safeIndex == index;
 
-                      return GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            _selectedSizeIndex = index;
-                          });
-                        },
-                        child: AnimatedContainer(
-                          duration: const Duration(milliseconds: 200),
-                          width: size.width * 0.28,
-                          padding: const EdgeInsets.symmetric(vertical: 10),
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            color: isSelected
-                                ? AppColors.primaryOrange.withValues(alpha: 0.1)
-                                : Colors.white,
-                            border: Border.all(
+                        return GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              _selectedSizeIndex = index;
+                            });
+                          },
+                          child: AnimatedContainer(
+                            duration: const Duration(milliseconds: 200),
+                            width: size.width * 0.28,
+                            padding: const EdgeInsets.symmetric(vertical: 10),
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
                               color: isSelected
-                                  ? AppColors.primaryOrange
-                                  : Colors.grey.shade300,
-                              width: isSelected ? 1.5 : 1,
+                                  ? AppColors.primaryOrange.withValues(
+                                      alpha: 0.1,
+                                    )
+                                  : Colors.white,
+                              border: Border.all(
+                                color: isSelected
+                                    ? AppColors.primaryOrange
+                                    : Colors.grey.shade300,
+                                width: isSelected ? 1.5 : 1,
+                              ),
+                              borderRadius: BorderRadius.circular(12),
                             ),
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: Text(
-                            sizeItem.size,
-                            style: GoogleFonts.sora(
-                              fontSize: 14,
-                              fontWeight: isSelected
-                                  ? FontWeight.w600
-                                  : FontWeight.w400,
-                              color: isSelected
-                                  ? AppColors.primaryOrange
-                                  : Colors.grey.shade600,
+                            child: Text(
+                              sizeItem.size,
+                              style: GoogleFonts.sora(
+                                fontSize: 14,
+                                fontWeight: isSelected
+                                    ? FontWeight.w600
+                                    : FontWeight.w400,
+                                color: isSelected
+                                    ? AppColors.primaryOrange
+                                    : Colors.grey.shade600,
+                              ),
                             ),
                           ),
-                        ),
-                      );
-                    }),
+                        );
+                      },
+                    ),
                   ),
 
                   const SizedBox(height: 20),
@@ -391,14 +394,36 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
                             ),
                           );
                       } else if (widget.coffieModel.sizes.isNotEmpty) {
-                        coffieBox.put(
-                          widget.coffieModel.id,
-                          BasketCoffieModel(
-                            coffieModel: widget.coffieModel,
-                            count: counter,
-                            selectedSize: widget.coffieModel.sizes[safeIndex],
-                          ),
-                        );
+                        if (coffieBox.values.any(
+                          (BasketCoffieModel b) =>
+                              b.coffieModel.id == widget.coffieModel.id,
+                        )) {
+                          BasketCoffieModel coffieD = coffieBox.values
+                              .where(
+                                (BasketCoffieModel b) =>
+                                    b.coffieModel.id == widget.coffieModel.id,
+                              )
+                              .toList()
+                              .first;
+                          coffieBox.put(
+                            widget.coffieModel.id,
+                            BasketCoffieModel(
+                              coffieModel: widget.coffieModel,
+                              count: counter + coffieD.count,
+                              selectedSize: widget.coffieModel.sizes[safeIndex],
+                            ),
+                          );
+                        } else {
+                          coffieBox.put(
+                            widget.coffieModel.id,
+                            BasketCoffieModel(
+                              coffieModel: widget.coffieModel,
+                              count: counter,
+                              selectedSize: widget.coffieModel.sizes[safeIndex],
+                            ),
+                          );
+                        }
+
                         if (!context.mounted) return;
                         context.pop();
                       }
