@@ -54,7 +54,7 @@ class _StoresScreenState extends ConsumerState<StoresScreen> {
           child: CircularProgressIndicator(color: AppColors.primaryOrange),
         ),
         error: (Object e, StackTrace s) => StoresErrorState(
-          errorText: 'generic_error'.tr(args: [e.toString()]),
+          errorText: 'generic_error'.tr(args: <String>[e.toString()]),
           onRetry: () => ref.refresh(storesDataRepositoryProvider),
         ),
       ),

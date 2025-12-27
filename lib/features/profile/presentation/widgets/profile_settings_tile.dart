@@ -40,7 +40,7 @@ class ProfileSettingsTile extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                        color: primaryColor.withOpacity(0.1),
+                        color: primaryColor.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Icon(icon, color: primaryColor, size: 22),
@@ -63,7 +63,7 @@ class ProfileSettingsTile extends StatelessWidget {
               if (!isLast)
                 Divider(
                   height: 1,
-                  color: Colors.grey.withOpacity(0.1),
+                  color: Colors.grey.withValues(alpha: 0.1),
                   indent: 60,
                 ),
             ],

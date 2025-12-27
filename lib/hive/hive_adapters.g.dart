@@ -164,9 +164,9 @@ class CoffieNutritionModelAdapter extends TypeAdapter<CoffieNutritionModel> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return CoffieNutritionModel(
-      kcal: (fields[0] as num).toInt(),
-      sugar_g: (fields[1] as num).toInt(),
-      caffeine_mg: (fields[2] as num).toInt(),
+      kcal: fields[0] == null ? 0 : (fields[0] as num).toInt(),
+      sugar: fields[3] == null ? 0 : (fields[3] as num).toInt(),
+      caffeine: fields[4] == null ? 0 : (fields[4] as num).toInt(),
     );
   }
 
@@ -176,10 +176,10 @@ class CoffieNutritionModelAdapter extends TypeAdapter<CoffieNutritionModel> {
       ..writeByte(3)
       ..writeByte(0)
       ..write(obj.kcal)
-      ..writeByte(1)
-      ..write(obj.sugar_g)
-      ..writeByte(2)
-      ..write(obj.caffeine_mg);
+      ..writeByte(3)
+      ..write(obj.sugar)
+      ..writeByte(4)
+      ..write(obj.caffeine);
   }
 
   @override

@@ -22,8 +22,10 @@ CoffieNutritionModel _$CoffieNutritionModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$CoffieNutritionModel {
   int get kcal => throw _privateConstructorUsedError;
-  int get sugar_g => throw _privateConstructorUsedError;
-  int get caffeine_mg => throw _privateConstructorUsedError;
+  @JsonKey(name: 'sugar_g')
+  int get sugar => throw _privateConstructorUsedError;
+  @JsonKey(name: 'caffeine_mg')
+  int get caffeine => throw _privateConstructorUsedError;
 
   /// Serializes this CoffieNutritionModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -42,7 +44,11 @@ abstract class $CoffieNutritionModelCopyWith<$Res> {
     $Res Function(CoffieNutritionModel) then,
   ) = _$CoffieNutritionModelCopyWithImpl<$Res, CoffieNutritionModel>;
   @useResult
-  $Res call({int kcal, int sugar_g, int caffeine_mg});
+  $Res call({
+    int kcal,
+    @JsonKey(name: 'sugar_g') int sugar,
+    @JsonKey(name: 'caffeine_mg') int caffeine,
+  });
 }
 
 /// @nodoc
@@ -64,8 +70,8 @@ class _$CoffieNutritionModelCopyWithImpl<
   @override
   $Res call({
     Object? kcal = null,
-    Object? sugar_g = null,
-    Object? caffeine_mg = null,
+    Object? sugar = null,
+    Object? caffeine = null,
   }) {
     return _then(
       _value.copyWith(
@@ -73,13 +79,13 @@ class _$CoffieNutritionModelCopyWithImpl<
                 ? _value.kcal
                 : kcal // ignore: cast_nullable_to_non_nullable
                       as int,
-            sugar_g: null == sugar_g
-                ? _value.sugar_g
-                : sugar_g // ignore: cast_nullable_to_non_nullable
+            sugar: null == sugar
+                ? _value.sugar
+                : sugar // ignore: cast_nullable_to_non_nullable
                       as int,
-            caffeine_mg: null == caffeine_mg
-                ? _value.caffeine_mg
-                : caffeine_mg // ignore: cast_nullable_to_non_nullable
+            caffeine: null == caffeine
+                ? _value.caffeine
+                : caffeine // ignore: cast_nullable_to_non_nullable
                       as int,
           )
           as $Val,
@@ -96,7 +102,11 @@ abstract class _$$CoffieNutritionModelImplCopyWith<$Res>
   ) = __$$CoffieNutritionModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int kcal, int sugar_g, int caffeine_mg});
+  $Res call({
+    int kcal,
+    @JsonKey(name: 'sugar_g') int sugar,
+    @JsonKey(name: 'caffeine_mg') int caffeine,
+  });
 }
 
 /// @nodoc
@@ -114,8 +124,8 @@ class __$$CoffieNutritionModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? kcal = null,
-    Object? sugar_g = null,
-    Object? caffeine_mg = null,
+    Object? sugar = null,
+    Object? caffeine = null,
   }) {
     return _then(
       _$CoffieNutritionModelImpl(
@@ -123,13 +133,13 @@ class __$$CoffieNutritionModelImplCopyWithImpl<$Res>
             ? _value.kcal
             : kcal // ignore: cast_nullable_to_non_nullable
                   as int,
-        sugar_g: null == sugar_g
-            ? _value.sugar_g
-            : sugar_g // ignore: cast_nullable_to_non_nullable
+        sugar: null == sugar
+            ? _value.sugar
+            : sugar // ignore: cast_nullable_to_non_nullable
                   as int,
-        caffeine_mg: null == caffeine_mg
-            ? _value.caffeine_mg
-            : caffeine_mg // ignore: cast_nullable_to_non_nullable
+        caffeine: null == caffeine
+            ? _value.caffeine
+            : caffeine // ignore: cast_nullable_to_non_nullable
                   as int,
       ),
     );
@@ -140,24 +150,27 @@ class __$$CoffieNutritionModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CoffieNutritionModelImpl implements _CoffieNutritionModel {
   const _$CoffieNutritionModelImpl({
-    required this.kcal,
-    required this.sugar_g,
-    required this.caffeine_mg,
+    this.kcal = 0,
+    @JsonKey(name: 'sugar_g') this.sugar = 0,
+    @JsonKey(name: 'caffeine_mg') this.caffeine = 0,
   });
 
   factory _$CoffieNutritionModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$CoffieNutritionModelImplFromJson(json);
 
   @override
+  @JsonKey()
   final int kcal;
   @override
-  final int sugar_g;
+  @JsonKey(name: 'sugar_g')
+  final int sugar;
   @override
-  final int caffeine_mg;
+  @JsonKey(name: 'caffeine_mg')
+  final int caffeine;
 
   @override
   String toString() {
-    return 'CoffieNutritionModel(kcal: $kcal, sugar_g: $sugar_g, caffeine_mg: $caffeine_mg)';
+    return 'CoffieNutritionModel(kcal: $kcal, sugar: $sugar, caffeine: $caffeine)';
   }
 
   @override
@@ -166,14 +179,14 @@ class _$CoffieNutritionModelImpl implements _CoffieNutritionModel {
         (other.runtimeType == runtimeType &&
             other is _$CoffieNutritionModelImpl &&
             (identical(other.kcal, kcal) || other.kcal == kcal) &&
-            (identical(other.sugar_g, sugar_g) || other.sugar_g == sugar_g) &&
-            (identical(other.caffeine_mg, caffeine_mg) ||
-                other.caffeine_mg == caffeine_mg));
+            (identical(other.sugar, sugar) || other.sugar == sugar) &&
+            (identical(other.caffeine, caffeine) ||
+                other.caffeine == caffeine));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, kcal, sugar_g, caffeine_mg);
+  int get hashCode => Object.hash(runtimeType, kcal, sugar, caffeine);
 
   /// Create a copy of CoffieNutritionModel
   /// with the given fields replaced by the non-null parameter values.
@@ -195,9 +208,9 @@ class _$CoffieNutritionModelImpl implements _CoffieNutritionModel {
 
 abstract class _CoffieNutritionModel implements CoffieNutritionModel {
   const factory _CoffieNutritionModel({
-    required final int kcal,
-    required final int sugar_g,
-    required final int caffeine_mg,
+    final int kcal,
+    @JsonKey(name: 'sugar_g') final int sugar,
+    @JsonKey(name: 'caffeine_mg') final int caffeine,
   }) = _$CoffieNutritionModelImpl;
 
   factory _CoffieNutritionModel.fromJson(Map<String, dynamic> json) =
@@ -206,9 +219,11 @@ abstract class _CoffieNutritionModel implements CoffieNutritionModel {
   @override
   int get kcal;
   @override
-  int get sugar_g;
+  @JsonKey(name: 'sugar_g')
+  int get sugar;
   @override
-  int get caffeine_mg;
+  @JsonKey(name: 'caffeine_mg')
+  int get caffeine;
 
   /// Create a copy of CoffieNutritionModel
   /// with the given fields replaced by the non-null parameter values.

@@ -45,7 +45,7 @@ class BasketItemCard extends StatelessWidget {
               ),
               const SizedBox(height: 4),
               Text(
-                'size_value'.tr(args: [item.selectedSize.size]),
+                'size_value'.tr(args: <String>[item.selectedSize.size]),
                 style: GoogleFonts.sora(
                   fontSize: 12,
                   color: AppColors.textLight,

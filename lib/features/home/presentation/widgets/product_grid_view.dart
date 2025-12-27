@@ -55,14 +55,14 @@ class _ProductGridViewState extends ConsumerState<ProductGridView> {
     if (asyncCoffies.hasError) {
       return Center(
         child: Text(
-          'coffee_error'.tr(namedArgs: {'error': '${asyncCoffies.error}'}),
+          'coffee_error'.tr(namedArgs: <String, String>{'error': '${asyncCoffies.error}'}),
         ),
       );
     }
     if (asyncCategories.hasError) {
       return Center(
         child: Text(
-          'category_error'.tr(namedArgs: {'error': '${asyncCategories.error}'}),
+          'category_error'.tr(namedArgs: <String, String>{'error': '${asyncCategories.error}'}),
         ),
       );
     }
@@ -124,7 +124,7 @@ class _ProductGridViewState extends ConsumerState<ProductGridView> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
+                      MaterialPageRoute<Widget>(
                         builder: (BuildContext context) =>
                             DetailScreen(coffieModel: coffie),
                       ),

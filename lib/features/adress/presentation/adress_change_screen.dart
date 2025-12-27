@@ -26,7 +26,7 @@ class _AdressChangeScreenState extends ConsumerState<AdressChangeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var selectedAdress = ref.watch(selectedAddressProvider);
+    AddressModel selectedAdress = ref.watch(selectedAddressProvider);
     return Scaffold(
       backgroundColor: AppColors.background,
       appBar: AppBar(
@@ -47,7 +47,7 @@ class _AdressChangeScreenState extends ConsumerState<AdressChangeScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8),
-        child: ValueListenableBuilder(
+        child: ValueListenableBuilder<Box<AddressModel>>(
           valueListenable: addressBox.listenable(),
           builder: (BuildContext context, Box<AddressModel> box, _) {
             if (box.isEmpty) {
@@ -66,7 +66,7 @@ class _AdressChangeScreenState extends ConsumerState<AdressChangeScreen> {
                   direction: DismissDirection.endToStart,
                   onDismissed: (DismissDirection direction) {
                     if (address.title == selectedAdress.title) {
-                      ref.refresh(selectedAddressProvider);
+                      ref.invalidate(selectedAddressProvider);
                     }
                     box.delete(address.title);
                   },
@@ -75,7 +75,7 @@ class _AdressChangeScreenState extends ConsumerState<AdressChangeScreen> {
                     margin: const EdgeInsets.only(bottom: 16),
                     padding: const EdgeInsets.only(right: 20),
                     decoration: BoxDecoration(
-                      color: Colors.redAccent.withOpacity(0.9),
+                      color: Colors.redAccent.withValues(alpha: 0.9),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: const Icon(
@@ -171,7 +171,7 @@ class _PremiumCardState extends ConsumerState<PremiumCard> {
         // -------------------------
         boxShadow: <BoxShadow>[
           BoxShadow(
-            color: Colors.grey.withOpacity(0.28),
+            color: Colors.grey.withValues(alpha: 0.28),
             blurRadius: 20,
             offset: const Offset(0, 8),
           ),
@@ -195,7 +195,7 @@ class _PremiumCardState extends ConsumerState<PremiumCard> {
                   // İsteğe bağlı: Seçiliyse ikon kutusunun rengini de değiştirebilirsin
                   color: isSelected
                       ? AppColors.primaryOrange
-                      : AppColors.primaryOrange.withOpacity(0.1),
+                      : AppColors.primaryOrange.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: Icon(
@@ -241,14 +241,18 @@ class _PremiumCardState extends ConsumerState<PremiumCard> {
                 ),
               ),
 
-              Radio<bool>(
-                value: true,
-                // Burada da aynı mantığı kullandık
-                groupValue: isSelected,
-                activeColor: AppColors.primaryOrange,
-                onChanged: (bool? value) => ref
+              GestureDetector(
+                onTap: () => ref
                     .read(selectedAddressProvider.notifier)
                     .change(widget.addressModel),
+                child: Icon(
+                  isSelected
+                      ? Icons.radio_button_checked
+                      : Icons.radio_button_unchecked,
+                  color: isSelected
+                      ? AppColors.primaryOrange
+                      : Colors.grey.shade400,
+                ),
               ),
             ],
           ),

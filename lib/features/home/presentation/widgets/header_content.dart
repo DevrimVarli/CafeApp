@@ -1,6 +1,5 @@
 import 'package:cafe_app/constants/app_colors.dart';
 import 'package:cafe_app/features/home/controller/selected_store.dart';
-import 'package:cafe_app/features/stores/data/stores_data_repository.dart';
 import 'package:cafe_app/features/stores/domain/stores_model.dart';
 import 'package:cafe_app/router/app_router_name.dart';
 import 'package:easy_localization/easy_localization.dart'; // Eklendi
@@ -13,9 +12,6 @@ class HeaderContent extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    AsyncValue<List<StoresModel>> liste = ref.watch(
-      storesDataRepositoryProvider,
-    );
     StoresModel selectedStore = ref.watch(selectedStoreProvider);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,7 +33,8 @@ class HeaderContent extends ConsumerWidget {
             children: <Widget>[
               Text(
                 selectedStore.name.isEmpty
-                    ? 'select_branch'.tr() // "Şube Seçiniz"
+                    ? 'select_branch'
+                          .tr() // "Şube Seçiniz"
                     : selectedStore.name,
                 style: TextStyle(
                   color: Colors.white.withValues(alpha: 0.9),

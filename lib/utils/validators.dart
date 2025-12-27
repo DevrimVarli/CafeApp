@@ -26,24 +26,27 @@ class AddressValidators {
   static String? address(String? v) {
     String t = (v ?? '').trim();
     if (t.isEmpty) return 'val_address_required'.tr(); // 'Adres gerekli'
-    if (t.length < 10)
+    if (t.length < 10) {
       return 'val_address_detail_warning'.tr(); // 'Biraz daha detay yaz'
+    }
     return null;
   }
 
   static String? email(String? v) {
     String text = (v ?? '').trim();
     if (text.isEmpty) return 'val_email_required'.tr(); // 'Email boş olamaz'
-    if (!text.contains('@'))
+    if (!text.contains('@')) {
       return 'val_email_invalid'.tr(); // 'Geçerli bir email gir'
+    }
     return null;
   }
 
   static String? password(String? v) {
     String text = v ?? '';
     if (text.isEmpty) return 'val_password_required'.tr(); // 'Şifre boş olamaz'
-    if (text.length < 6)
+    if (text.length < 6) {
       return 'val_password_min_6_chars'.tr(); // 'Şifre en az 6 karakter'
+    }
     return null;
   }
 }

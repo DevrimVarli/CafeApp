@@ -57,7 +57,7 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
           onPressed: () => Navigator.pop(context),
         ),
         actions: <Widget>[
-          ValueListenableBuilder(
+          ValueListenableBuilder<Box<CoffieModel>>(
             valueListenable: favoriCoffieBox.listenable(),
             builder:
                 (BuildContext context, Box<CoffieModel> value, Widget? child) {
@@ -190,7 +190,7 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
                   // Dinamik Size Selector
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: List.generate(widget.coffieModel.sizes.length, (
+                    children: List<Widget>.generate(widget.coffieModel.sizes.length, (
                       int index,
                     ) {
                       CoffieSizeModel sizeItem =
@@ -329,8 +329,7 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
                   child: ElevatedButton(
                     onPressed: () {
                       if (counter == 0) {
-                        ScaffoldMessengerState
-                        messenger = ScaffoldMessenger.of(context)
+                        ScaffoldMessenger.of(context)
                           ..hideCurrentSnackBar()
                           ..showSnackBar(
                             SnackBar(

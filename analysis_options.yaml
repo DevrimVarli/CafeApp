@@ -93,3 +93,5 @@ linter:
 
     # conflicts with `prefer_relative_imports`
     prefer_relative_imports: false
+
+    use_setters_to_change_properties: false

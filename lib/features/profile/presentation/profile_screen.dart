@@ -40,7 +40,9 @@ class ProfileScreen extends ConsumerWidget {
           child: CircularProgressIndicator(color: AppColors.primaryOrange),
         ),
         error: (Object err, StackTrace stack) => Center(
-          child: Text('generic_error'.tr(namedArgs: {'error': '$err'})),
+          child: Text(
+            'generic_error'.tr(namedArgs: <String, String>{'error': '$err'}),
+          ),
         ),
         data: (DocumentSnapshot<Map<String, dynamic>> snapshot) {
           if (!snapshot.exists || snapshot.data() == null) {
@@ -51,7 +53,7 @@ class ProfileScreen extends ConsumerWidget {
 
           return Stack(
             fit: StackFit.expand,
-            children: [
+            children: <Widget>[
               const SoftBackgroundDecor(),
               const SizedBox(height: 20),
               SingleChildScrollView(
@@ -95,7 +97,9 @@ class ProfileScreen extends ConsumerWidget {
                         borderRadius: BorderRadius.circular(24),
                         boxShadow: <BoxShadow>[
                           BoxShadow(
-                            color: AppColors.primaryOrange.withOpacity(0.08),
+                            color: AppColors.primaryOrange.withValues(
+                              alpha: 0.08,
+                            ),
                             blurRadius: 24,
                             offset: const Offset(0, 8),
                           ),
@@ -111,11 +115,10 @@ class ProfileScreen extends ConsumerWidget {
                             textColor: AppColors.textDark,
                             isLast: false,
                             trailing: Switch.adaptive(
-                              value: false, // Buraya Riverpod state'i gelmeli
+                              value: false,
                               onChanged: (bool val) {},
-                              activeColor: AppColors.primaryOrange,
-                              activeTrackColor: AppColors.primaryOrange
-                                  .withOpacity(0.3),
+                              activeTrackColor: AppColors.primaryOrange,
+                              inactiveThumbColor: AppColors.textDark,
                             ),
                           ),
                           // Dil Seçeneği Ayarı
@@ -135,8 +138,8 @@ class ProfileScreen extends ConsumerWidget {
                                   'language_${context.locale.languageCode}'
                                       .tr(), // Tırnakları kaldırdık
                                   style: TextStyle(
-                                    color: AppColors.primaryOrange.withOpacity(
-                                      0.8,
+                                    color: AppColors.primaryOrange.withValues(
+                                      alpha: 0.8,
                                     ),
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -156,7 +159,7 @@ class ProfileScreen extends ConsumerWidget {
                     ),
 
                     const SizedBox(height: 30),
-                    ProfileLogoutButton(),
+                    const ProfileLogoutButton(),
                   ],
                 ),
               ),

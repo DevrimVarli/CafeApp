@@ -15,5 +15,3 @@ class ExtrasModel with _$ExtrasModel {
       _$ExtrasModelFromJson(json);
 
 }
-
-

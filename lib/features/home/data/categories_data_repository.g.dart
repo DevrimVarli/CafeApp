@@ -7,7 +7,7 @@ part of 'categories_data_repository.dart';
 // **************************************************************************
 
 String _$categoriesDataRepositoryHash() =>
-    r'd72b436894bfc3a4d38670075e9094e704017f36';
+    r'a490873f69a1aeeca1765e16ed8238990c684c81';
 
 /// See also [categoriesDataRepository].
 @ProviderFor(categoriesDataRepository)

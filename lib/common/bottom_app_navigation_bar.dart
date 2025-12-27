@@ -68,11 +68,11 @@ class _BottomAppNavigationBarState
                 label: 'nav_favorites'.tr(),
               ),
                BottomNavigationBarItem(
-                icon: Icon(Icons.shopping_basket),
+                icon: const Icon(Icons.shopping_basket),
                 label: 'nav_basket'.tr(),
               ),
                BottomNavigationBarItem(
-                icon: Icon(Icons.person),
+                icon: const Icon(Icons.person),
                 label: 'nav_profile'.tr(),
               ),
             ],

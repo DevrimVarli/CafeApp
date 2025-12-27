@@ -84,7 +84,7 @@ class CategoryListSection extends ConsumerWidget {
           ),
         ),
         error: (Object err, StackTrace stack) =>
-            Center(child: Text('generic_error'.tr(args: [err.toString()]))),
+            Center(child: Text('generic_error'.tr(args: <String>[err.toString()]))),
       ),
     );
   }

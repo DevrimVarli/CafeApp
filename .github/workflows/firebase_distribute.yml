@@ -1,0 +1,43 @@
+name: Firebase App Distribution
+
+# Ne zaman çalışsın? (Örneğin: main branch'e push atıldığında)
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-distribute:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Kodu Çek
+      - uses: actions/checkout@v4
+
+      # 2. Java Kur (Android build için şart)
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      # 3. Flutter Kur
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+
+      # 4. Bağımlılıkları Yükle
+      - name: Install Dependencies
+        run: flutter pub get
+
+      # 5. APK Build Al (Release Modunda)
+      - name: Build APK
+        run: flutter build apk --release
+
+      # 6. Firebase'e Yükle
+      - name: Upload to Firebase App Distribution
+        uses: wzieba/Firebase-Distribution-Github-Action@v1
+        with:
+          appId: ${{ secrets.FIREBASE_APP_ID }}
+          token: ${{ secrets.FIREBASE_TOKEN }}
+          groups: testers # Firebase'de oluşturduğun test grubunun adı (opsiyonel)
+          file: build/app/outputs/flutter-apk/app-release.apk

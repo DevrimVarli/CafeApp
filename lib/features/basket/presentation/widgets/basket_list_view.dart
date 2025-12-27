@@ -15,7 +15,7 @@ class BasketListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ValueListenableBuilder(
+    return ValueListenableBuilder<Box<BasketCoffieModel>>(
       valueListenable: sepetBox.listenable(),
       builder: (BuildContext context, Box<BasketCoffieModel> box, _) {
         List<BasketCoffieModel> sepetList = box.values.toList();

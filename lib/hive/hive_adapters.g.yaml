@@ -53,14 +53,14 @@ types:
         index: 1
   CoffieNutritionModel:
     typeId: 3
-    nextIndex: 3
+    nextIndex: 5
     fields:
       kcal:
         index: 0
-      sugar_g:
-        index: 1
-      caffeine_mg:
-        index: 2
+      sugar:
+        index: 3
+      caffeine:
+        index: 4
   BasketCoffieModel:
     typeId: 4
     nextIndex: 3

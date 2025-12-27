@@ -4,14 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OrderTypeSelector extends StatelessWidget {
-
   const OrderTypeSelector({
     super.key,
     required this.selectedIndex,
     required this.onTypeChanged,
   });
   final int selectedIndex;
-  final Function(int) onTypeChanged;
+  final void Function(int) onTypeChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +22,10 @@ class OrderTypeSelector extends StatelessWidget {
         borderRadius: BorderRadius.circular(14),
       ),
       child: Row(
-        children: <Widget>[_buildButton('deliver'.tr(), 0), _buildButton('pick_up'.tr(), 1)],
+        children: <Widget>[
+          _buildButton('deliver'.tr(), 0),
+          _buildButton('pick_up'.tr(), 1),
+        ],
       ),
     );
   }

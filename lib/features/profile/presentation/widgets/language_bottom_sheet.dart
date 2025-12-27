@@ -6,7 +6,7 @@ class LanguageBottomSheet {
   static const Color primaryOrange = Color(0xFFC67C4E);
 
   static void show(BuildContext context) {
-    showModalBottomSheet(
+    showModalBottomSheet<void>(
       context: context,
       backgroundColor: Colors.white,
       shape: const RoundedRectangleBorder(
@@ -47,10 +47,14 @@ class LanguageBottomSheet {
 
     return DecoratedBox(
       decoration: BoxDecoration(
-        color: isSelected ? primaryOrange.withOpacity(0.1) : Colors.transparent,
+        color: isSelected
+            ? primaryOrange.withValues(alpha: 0.1)
+            : Colors.transparent,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: isSelected ? primaryOrange : Colors.grey.withOpacity(0.2),
+          color: isSelected
+              ? primaryOrange
+              : Colors.grey.withValues(alpha: 0.2),
         ),
       ),
       child: ListTile(
