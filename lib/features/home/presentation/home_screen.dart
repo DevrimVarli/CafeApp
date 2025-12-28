@@ -4,6 +4,7 @@ import 'package:cafe_app/features/home/presentation/widgets/dark_background.dart
 import 'package:cafe_app/features/home/presentation/widgets/header_content.dart';
 import 'package:cafe_app/features/home/presentation/widgets/product_grid_view.dart';
 import 'package:cafe_app/features/home/presentation/widgets/promo_banner.dart';
+import 'package:cafe_app/utils/context_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -16,7 +17,7 @@ class HomeScreen extends ConsumerWidget {
     double headerHeight = size.height * 0.35;
 
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: context.colorScheme.surface,
       body: SingleChildScrollView(
         child: Column(
           spacing: 24,

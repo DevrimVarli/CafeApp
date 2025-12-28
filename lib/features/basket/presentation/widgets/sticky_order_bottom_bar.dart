@@ -1,4 +1,5 @@
 import 'package:cafe_app/constants/app_colors.dart';
+import 'package:cafe_app/utils/currency_format_extension.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -9,7 +10,7 @@ class StickyOrderBottomBar extends StatelessWidget {
     required this.totalPrice,
     required this.onOrderTap,
   });
-  final String totalPrice;
+  final double totalPrice;
   final VoidCallback onOrderTap;
 
   @override
@@ -63,7 +64,7 @@ class StickyOrderBottomBar extends StatelessWidget {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  totalPrice,
+                  totalPrice.toPrice,
                   style: GoogleFonts.sora(
                     color: AppColors.primaryOrange,
                     fontSize: 18,

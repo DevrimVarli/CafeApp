@@ -73,6 +73,7 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                     ),
                     padding: const EdgeInsets.fromLTRB(16, 18, 16, 26),
                     child: Column(
+                      spacing: 14,
                       children: <Widget>[
                         Container(
                           width: 46,
@@ -82,7 +83,6 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                             borderRadius: BorderRadius.circular(999),
                           ),
                         ),
-                        const SizedBox(height: 14),
                         RegisterFormCard(
                           formKey: _formKey,
                           nameCtrl: _nameCtrl,
@@ -112,8 +112,6 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                             ref.read(isLoginProvider.notifier).change();
                           },
                         ),
-
-                        const SizedBox(height: 14),
                         Text(
                           'terms_privacy_policy'.tr(),
                           textAlign: TextAlign.center,
@@ -179,6 +177,7 @@ class RegisterFormCard extends StatelessWidget {
       child: Form(
         key: formKey,
         child: Column(
+          spacing: 16,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Align(
@@ -191,8 +190,6 @@ class RegisterFormCard extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 20),
-            // İsim Soyisim Alanı
             TextFormField(
               controller: nameCtrl,
               decoration: InputDecoration(
@@ -210,9 +207,6 @@ class RegisterFormCard extends StatelessWidget {
               ),
               validator: AddressValidators.fullName,
             ),
-            const SizedBox(height: 16),
-
-            // Email Alanı
             TextFormField(
               controller: emailCtrl,
               keyboardType: TextInputType.emailAddress,
@@ -231,9 +225,6 @@ class RegisterFormCard extends StatelessWidget {
               ),
               validator: AddressValidators.email,
             ),
-            const SizedBox(height: 16),
-
-            // Şifre Alanı
             TextFormField(
               controller: passCtrl,
               obscureText: obscure,
@@ -259,9 +250,6 @@ class RegisterFormCard extends StatelessWidget {
               ),
               validator: AddressValidators.password,
             ),
-            const SizedBox(height: 16),
-
-            // Kayıt Ol Butonu
             SizedBox(
               height: 56,
               child: ElevatedButton(
@@ -285,8 +273,6 @@ class RegisterFormCard extends StatelessWidget {
                       ),
               ),
             ),
-            const SizedBox(height: 20),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[

@@ -8,9 +8,9 @@ class LoginOrDivider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      spacing: 10,
       children: <Widget>[
         Expanded(child: Divider(color: Colors.black.withValues(alpha: 0.08))),
-        const SizedBox(width: 10),
         Text(
           'or_continue_with'.tr(),
           style: GoogleFonts.sora(
@@ -19,7 +19,6 @@ class LoginOrDivider extends StatelessWidget {
             color: Colors.black.withValues(alpha: 0.45),
           ),
         ),
-        const SizedBox(width: 10),
         Expanded(child: Divider(color: Colors.black.withValues(alpha: 0.08))),
       ],
     );

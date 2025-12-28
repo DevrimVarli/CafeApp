@@ -1,6 +1,6 @@
 import 'package:cafe_app/features/basket/domain/basket_coffie_model.dart';
 import 'package:cafe_app/features/basket/presentation/widgets/basket_list_view.dart';
-import 'package:cafe_app/features/basket/presentation/widgets/delivery_address_section.dart';
+import 'package:cafe_app/features/basket/presentation/widgets/delivery_stores_section.dart';
 import 'package:cafe_app/features/basket/presentation/widgets/section_divider.dart';
 import 'package:cafe_app/features/basket/presentation/widgets/sticky_order_bottom_bar.dart';
 import 'package:cafe_app/utils/calculate_total_price.dart';
@@ -10,12 +10,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_ce_flutter/adapters.dart';
 
-class DeliverContent extends StatelessWidget {
-  const DeliverContent({super.key, required Box<BasketCoffieModel> sepetBox})
+class PickUpContent extends StatelessWidget {
+  const PickUpContent({super.key, required Box<BasketCoffieModel> sepetBox})
     : _sepetBox = sepetBox;
 
   final Box<BasketCoffieModel> _sepetBox;
-
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +38,7 @@ class DeliverContent extends StatelessWidget {
                       ),
                     ],
                   ),
-                  child: const DeliveryAddressSection(),
+                  child: const DeliveryStoresSection(),
                 ),
                 const SizedBox(height: 12),
                 Container(

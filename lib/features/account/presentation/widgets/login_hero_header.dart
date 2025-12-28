@@ -38,6 +38,7 @@ class LoginHeroHeader extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(20, 56, 20, 18),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: 8,
               children: <Widget>[
                 const Spacer(flex: 2),
                 Text(
@@ -49,7 +50,6 @@ class LoginHeroHeader extends StatelessWidget {
                     height: 1.1,
                   ),
                 ),
-                const SizedBox(height: 8),
                 Text(
                   'login_subtitle'
                       .tr(), // JSON: "Kahve yolculuğuna devam et..."

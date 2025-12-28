@@ -61,6 +61,7 @@ class LoginFormCard extends StatelessWidget {
       child: Form(
         key: formKey,
         child: Column(
+          spacing: 10,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
@@ -71,9 +72,7 @@ class LoginFormCard extends StatelessWidget {
                 color: Colors.black87,
               ),
             ),
-            const SizedBox(height: 12),
-            LoginLabel('email_label'.tr()), // "E-posta" (const kaldırıldı)
-            const SizedBox(height: 8),
+            LoginLabel('email_label'.tr()),
             LoginTextFieldFancy(
               controller: emailCtrl,
               hint: 'email_hint'.tr(), // "name@email.com"
@@ -81,12 +80,10 @@ class LoginFormCard extends StatelessWidget {
               prefixIcon: Icons.alternate_email_rounded,
               validator: AddressValidators.email,
             ),
-            const SizedBox(height: 14),
-            LoginLabel('password_label'.tr()), // "Şifre" (const kaldırıldı)
-            const SizedBox(height: 8),
+            LoginLabel('password_label'.tr()),
             LoginTextFieldFancy(
               controller: passCtrl,
-              hint: 'password_hint'.tr(), // "••••••••"
+              hint: 'password_hint'.tr(),
               prefixIcon: Icons.lock_rounded,
               obscureText: obscure,
               validator: AddressValidators.password,
@@ -100,7 +97,6 @@ class LoginFormCard extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 10),
             Row(
               children: <Widget>[
                 Checkbox(
@@ -131,7 +127,6 @@ class LoginFormCard extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 8),
             SizedBox(
               width: double.infinity,
               height: 54,
@@ -165,10 +160,9 @@ class LoginFormCard extends StatelessWidget {
                       ),
               ),
             ),
-            const SizedBox(height: 14),
             const LoginOrDivider(),
-            const SizedBox(height: 12),
             Row(
+              spacing: 10,
               children: <Widget>[
                 Expanded(
                   child: LoginSocialButton(
@@ -177,7 +171,6 @@ class LoginFormCard extends StatelessWidget {
                     onTap: onGoogleTap,
                   ),
                 ),
-                const SizedBox(width: 10),
                 Expanded(
                   child: LoginSocialButton(
                     text: 'apple_btn'.tr(), // "Apple"
@@ -187,8 +180,8 @@ class LoginFormCard extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 16),
             Row(
+              spacing: 6,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(
@@ -199,7 +192,6 @@ class LoginFormCard extends StatelessWidget {
                     color: Colors.black.withValues(alpha: 0.6),
                   ),
                 ),
-                const SizedBox(width: 6),
                 GestureDetector(
                   onTap: onCreateAccountTap,
                   child: Text(

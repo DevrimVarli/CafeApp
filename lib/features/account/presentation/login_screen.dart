@@ -55,6 +55,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
               child: SingleChildScrollView(
                 padding: const EdgeInsets.fromLTRB(16, 18, 16, 26),
                 child: Column(
+                  spacing: 14,
                   children: <Widget>[
                     Container(
                       width: 46,
@@ -64,7 +65,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                         borderRadius: BorderRadius.circular(999),
                       ),
                     ),
-                    const SizedBox(height: 14),
                     LoginFormCard(
                       formKey: _formKey,
                       emailCtrl: _emailCtrl,
@@ -94,7 +94,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                       onCreateAccountTap: () =>
                           ref.read(isLoginProvider.notifier).change(),
                     ),
-                    const SizedBox(height: 14),
                     Text(
                       'terms_privacy_policy'.tr(),
                       textAlign: TextAlign.center,

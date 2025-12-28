@@ -8,14 +8,10 @@ class StoresEmptyState extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Column(
+        spacing: 16,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Icon(
-            Icons.storefront_outlined,
-            size: 64,
-            color: Colors.grey[400],
-          ),
-          const SizedBox(height: 16),
+          Icon(Icons.storefront_outlined, size: 64, color: Colors.grey[400]),
           Text(
             'branch_not_found'.tr(),
             style: TextStyle(

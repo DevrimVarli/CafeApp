@@ -128,6 +128,14 @@
   "val_password_required": "Password cannot be empty",
   "val_password_min_6_chars": "Password must be at least 6 characters",
 
+  
+  "delivery_store": "Delivery Store",
+  "store_not_selected": "No Store Selected",
+  "start_by_selecting_store": "Please select a store to start ordering.",
+  "select_store": "Select Store",
+  "location_unknown": "Location unknown",
+  "open_now": "Open Now",
+
   "nav_home": "Home",
   "nav_search": "Search",
   "nav_basket": "Basket",

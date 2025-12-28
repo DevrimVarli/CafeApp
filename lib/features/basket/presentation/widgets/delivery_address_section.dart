@@ -80,7 +80,7 @@ class DeliveryAddressSection extends ConsumerWidget {
                     ],
                   ),
                 ),
-                _OutlinedBtn(
+                OutlinedBtn(
                   icon: Icons.change_circle,
                   text: 'change'.tr(), // "Değiştir"
                   onTap: () {
@@ -94,7 +94,7 @@ class DeliveryAddressSection extends ConsumerWidget {
 
             Row(
               children: <Widget>[
-                _OutlinedBtn(
+                OutlinedBtn(
                   icon: Icons.edit_location_outlined,
                   text: 'edit_address'.tr(), // "Adresi Düzenle"
                   onTap:
@@ -104,7 +104,7 @@ class DeliveryAddressSection extends ConsumerWidget {
                       ),
                 ),
                 const SizedBox(width: 12),
-                _OutlinedBtn(
+                OutlinedBtn(
                   icon: Icons.note_add_outlined,
                   text: 'add_address'.tr(), // "Adres Ekle"
                   onTap: () => context.push(AppRouterName.address),
@@ -118,8 +118,8 @@ class DeliveryAddressSection extends ConsumerWidget {
   }
 }
 
-class _OutlinedBtn extends StatelessWidget {
-  const _OutlinedBtn({
+class OutlinedBtn extends StatelessWidget {
+  const OutlinedBtn({
     required this.icon,
     required this.text,
     required this.onTap,
@@ -194,7 +194,7 @@ class _EmptyAddress extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 14),
-        _OutlinedBtn(
+        OutlinedBtn(
           icon: Icons.add_location_alt_outlined,
           text: 'add_address'.tr(), // "Adres Ekle"
           onTap: onAdd,

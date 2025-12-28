@@ -2,7 +2,7 @@ import 'package:cafe_app/features/basket/domain/basket_coffie_model.dart';
 import 'package:cafe_app/features/basket/presentation/widgets/basket_app_bar.dart';
 import 'package:cafe_app/features/basket/presentation/widgets/deliver_content.dart';
 import 'package:cafe_app/features/basket/presentation/widgets/order_type_card.dart';
-import 'package:cafe_app/features/basket/presentation/widgets/pickup_placeholder.dart';
+import 'package:cafe_app/features/basket/presentation/widgets/pick_up_content.dart';
 import 'package:cafe_app/features/basket/presentation/widgets/soft_background_decor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -73,7 +73,7 @@ class _BasketScreenState extends ConsumerState<BasketScreen> {
                       setState(() => _selectedIndex = index),
                   children: <Widget>[
                     DeliverContent(sepetBox: _sepetBox),
-                    const PickUpPlaceholder(),
+                    PickUpContent(sepetBox: _sepetBox),
                   ],
                 ),
               ),

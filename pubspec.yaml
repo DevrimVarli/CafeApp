@@ -57,6 +57,7 @@ dependencies:
   fluttertoast: ^9.0.0
   google_sign_in: ^6.1.5
   icons_launcher: ^3.0.3
+  intl: ^0.20.2
 dev_dependencies:
   flutter_test:
     sdk: flutter

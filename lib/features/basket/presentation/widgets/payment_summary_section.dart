@@ -1,6 +1,7 @@
 import 'package:cafe_app/constants/app_colors.dart';
 import 'package:cafe_app/features/basket/domain/basket_coffie_model.dart';
 import 'package:cafe_app/utils/calculate_total_price.dart';
+import 'package:cafe_app/utils/currency_format_extension.dart';
 import 'package:easy_localization/easy_localization.dart'; // Eklendi
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -45,7 +46,7 @@ class _PaymentSummarySectionState extends State<PaymentSummarySection> {
 
               return _buildRow(
                 '${coffie.coffieModel.name} (x${coffie.count})',
-                '\$ ${price.toStringAsFixed(2)}',
+                price.toPrice,
               );
             },
           ),
@@ -57,7 +58,7 @@ class _PaymentSummarySectionState extends State<PaymentSummarySection> {
 
         _buildRow(
           'total_payment'.tr(), // "Toplam Ödeme"
-          '\$ ${calculateTotalPrice(widget.sepetBox).toStringAsFixed(2)}',
+          calculateTotalPrice(widget.sepetBox).toPrice,
           isTotal: true,
         ),
       ],

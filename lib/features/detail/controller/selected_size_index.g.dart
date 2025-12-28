@@ -1,29 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'profile_data_repository.dart';
+part of 'selected_size_index.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$getUserDataHash() => r'a29e9ddef6a64fe0fd4bdeb16c7f79ce6fc0dc07';
+String _$selectedSizeIndexHash() => r'd1c504af6db246f432cb26f1025ccc80e4e240a0';
 
-/// See also [getUserData].
-@ProviderFor(getUserData)
-final getUserDataProvider =
-    AutoDisposeStreamProvider<DocumentSnapshot<Map<String, dynamic>>>.internal(
-      getUserData,
-      name: r'getUserDataProvider',
+/// See also [SelectedSizeIndex].
+@ProviderFor(SelectedSizeIndex)
+final selectedSizeIndexProvider =
+    AutoDisposeNotifierProvider<SelectedSizeIndex, int>.internal(
+      SelectedSizeIndex.new,
+      name: r'selectedSizeIndexProvider',
       debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
           ? null
-          : _$getUserDataHash,
+          : _$selectedSizeIndexHash,
       dependencies: null,
       allTransitiveDependencies: null,
     );
 
-@Deprecated('Will be removed in 3.0. Use Ref instead')
-// ignore: unused_element
-typedef GetUserDataRef =
-    AutoDisposeStreamProviderRef<DocumentSnapshot<Map<String, dynamic>>>;
+typedef _$SelectedSizeIndex = AutoDisposeNotifier<int>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

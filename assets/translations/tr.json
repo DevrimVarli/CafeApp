@@ -127,6 +127,15 @@
   "val_password_required": "Şifre boş olamaz",
   "val_password_min_6_chars": "Şifre en az 6 karakter",
 
+  
+  "delivery_store": "Teslimat Şubesi",
+  "store_not_selected": "Şube Seçilmedi",
+  "start_by_selecting_store": "Sipariş için lütfen bir şube seçin.",
+  "select_store": "Şube Seç",
+  "location_unknown": "Konum bilgisi yok",
+  "open_now": "Şu an Açık",
+
+
   "nav_home": "Ana Sayfa",
   "nav_search": "Ara",
   "nav_basket": "Sepet",

@@ -18,6 +18,7 @@ class StoresErrorState extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
+          spacing: 12,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Icon(
@@ -25,13 +26,11 @@ class StoresErrorState extends StatelessWidget {
               size: 56,
               color: Colors.red.withValues(alpha: 0.75),
             ),
-            const SizedBox(height: 12),
             Text(
               errorText,
               textAlign: TextAlign.center,
               style: const TextStyle(color: Colors.red),
             ),
-            const SizedBox(height: 12),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.primaryOrange,
@@ -41,7 +40,7 @@ class StoresErrorState extends StatelessWidget {
                 ),
               ),
               onPressed: onRetry,
-              child:  Text('try_again'.tr()),
+              child: Text('try_again'.tr()),
             ),
           ],
         ),

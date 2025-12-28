@@ -136,15 +136,15 @@ class _AddressScreenState extends ConsumerState<AddressScreen> {
       body: SingleChildScrollView(
         padding: const EdgeInsets.fromLTRB(16, 14, 16, 18),
         child: Column(
+          spacing: 12,
           children: <Widget>[
             const HeaderCard(),
-            const SizedBox(height: 12),
-
             CardShell(
-              title: 'delivery_info'.tr(), // JSON: Teslimat Bilgileri
+              title: 'delivery_info'.tr(),
               child: Form(
                 key: _formKey,
                 child: Column(
+                  spacing: 11,
                   children: <Widget>[
                     FancyField(
                       controller: _titleCtrl,
@@ -153,7 +153,6 @@ class _AddressScreenState extends ConsumerState<AddressScreen> {
                       prefix: Icons.bookmark_border_rounded,
                       validator: AddressValidators.title,
                     ),
-                    const SizedBox(height: 12),
                     Row(
                       children: <Widget>[
                         Expanded(
@@ -165,7 +164,6 @@ class _AddressScreenState extends ConsumerState<AddressScreen> {
                             validator: AddressValidators.fullName,
                           ),
                         ),
-                        const SizedBox(width: 10),
                         Expanded(
                           child: FancyField(
                             controller: _phoneCtrl,
@@ -182,9 +180,6 @@ class _AddressScreenState extends ConsumerState<AddressScreen> {
                 ),
               ),
             ),
-
-            const SizedBox(height: 12),
-
             CardShell(
               title: 'location'.tr(), // JSON: Konum
               child: LocationSection(

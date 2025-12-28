@@ -37,7 +37,7 @@ class AccountScreen extends ConsumerWidget {
 
       // Hata durumu
       error: (Object error, StackTrace stackTrace) => Scaffold(
-        body: Center(child: Text('error_message'.tr(args: <String>[error.toString()]))),
+        body: Center(child: Text('error_message'.tr( namedArgs: <String, String>{'error': error.toString()},))),
       ),
     );
   }

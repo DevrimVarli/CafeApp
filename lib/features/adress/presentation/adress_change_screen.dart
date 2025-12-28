@@ -209,6 +209,7 @@ class _PremiumCardState extends ConsumerState<PremiumCard> {
               // Orta Kısım: Yazılar
               Expanded(
                 child: Column(
+                  spacing: 4,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
@@ -219,7 +220,6 @@ class _PremiumCardState extends ConsumerState<PremiumCard> {
                         color: Color(0xFF2D3142),
                       ),
                     ),
-                    const SizedBox(height: 4),
                     Text(
                       '${getAddressType(widget.addressModel.type)} • ${widget.addressModel.districtName}',
                       style: TextStyle(
@@ -228,7 +228,6 @@ class _PremiumCardState extends ConsumerState<PremiumCard> {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    const SizedBox(height: 4),
                     Text(
                       '${widget.addressModel.phoneNumber} • ${widget.addressModel.fullName}',
                       style: TextStyle(
