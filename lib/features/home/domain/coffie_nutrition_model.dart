@@ -5,8 +5,6 @@ part 'coffie_nutrition_model.freezed.dart';
 
 @freezed
 class CoffieNutritionModel with _$CoffieNutritionModel {
-  // HiveType ve HiveField eklemen gerekiyorsa buraya eklemelisin.
-  // Ancak hatayı çözmek için asıl önemli olan @Default(0) kısmıdır.
   const factory CoffieNutritionModel({
     @Default(0) int kcal,
     @Default(0) @JsonKey(name: 'sugar_g') int sugar,

@@ -1,4 +1,4 @@
-// 8. Alt Satın Alma Barı Bileşeni
+
 import 'package:cafe_app/constants/app_colors.dart';
 import 'package:cafe_app/features/basket/domain/basket_coffie_model.dart';
 import 'package:cafe_app/features/detail/controller/coffie_count_controller.dart';
@@ -12,7 +12,6 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_ce/hive.dart';
 
-// 8. Alt Satın Alma Barı Bileşeni
 class ProductBottomBar extends ConsumerWidget {
   const ProductBottomBar({
     super.key,
@@ -47,7 +46,6 @@ class ProductBottomBar extends ConsumerWidget {
       ),
       child: Row(
         children: <Widget>[
-          // Fiyat
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -70,7 +68,6 @@ class ProductBottomBar extends ConsumerWidget {
             ],
           ),
           const SizedBox(width: 40),
-          // Satın Al Butonu
           Expanded(
             child: ElevatedButton(
               onPressed: () => _handleBuyNow(context, counter, coffieBox),
@@ -154,7 +151,7 @@ class ProductBottomBar extends ConsumerWidget {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(16),
-              boxShadow: [
+              boxShadow: <BoxShadow>[
                 BoxShadow(
                   color: Colors.black.withValues(alpha: 0.15),
                   blurRadius: 20,
@@ -163,7 +160,7 @@ class ProductBottomBar extends ConsumerWidget {
               ],
             ),
             child: Row(
-              children: [
+              children: <Widget>[
                 Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(

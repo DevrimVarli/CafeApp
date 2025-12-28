@@ -107,7 +107,6 @@ class LocationSection extends StatelessWidget {
       ),
       error: (Object e, StackTrace s) => Padding(
         padding: const EdgeInsets.all(12),
-        // Hata mesajını parametreli olarak çeviriyoruz
         child: Text('city_list_error'.tr(namedArgs: <String, String>{'error': '$e'})),
       ),
     );

@@ -13,29 +13,22 @@ class AccountScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // 1. Firebase Auth durumunu dinliyoruz (Loading, Error, Data)
     AsyncValue<User?> authState = ref.watch(authStateProvider);
 
-    // 2. Login/Register arası geçişi sağlayan lokal state
     bool isLoginMode = ref.watch(isLoginProvider);
 
     return authState.when(
-      // Veri geldiğinde (Kullanıcı durumu belli olduğunda)
       data: (User? user) {
-        // A) Kullanıcı varsa (Giriş yapmışsa) -> Profil Ekranı
         if (user != null) {
           return const ProfileScreen();
         }
 
-        // B) Kullanıcı yoksa (Giriş yapmamışsa) -> Login veya Register Ekranı
         return isLoginMode ? const LoginScreen() : const RegisterScreen();
       },
 
-      // Yükleniyor durumu (Firebase henüz cevap vermediyse)
       loading: () =>
           const Scaffold(body: Center(child: CircularProgressIndicator())),
 
-      // Hata durumu
       error: (Object error, StackTrace stackTrace) => Scaffold(
         body: Center(child: Text('error_message'.tr( namedArgs: <String, String>{'error': error.toString()},))),
       ),

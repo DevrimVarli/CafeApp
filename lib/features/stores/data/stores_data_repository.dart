@@ -13,16 +13,13 @@ Future<List<StoresModel>> storesDataRepository(Ref ref) async {
   );
 
   if (response.statusCode == 200) {
-    // response.data'nın bir String olduğunu varsayarak jsonDecode kullanıyoruz
     dynamic decodedData = jsonDecode(response.data.toString());
 
-    // Şimdi ayrıştırılmış verinin Map olduğundan eminiz
     Map<String, dynamic> data =
         decodedData
-            as Map<String, dynamic>; // 2. Decode edilmiş veriyi Map'e cast et
+            as Map<String, dynamic>; 
 
     List<dynamic> result = data['stores'] as List<dynamic>;
-    // ... (rest of your code)
     return result
         .map((dynamic e) => StoresModel.fromJson(e as Map<String, dynamic>))
         .toList();

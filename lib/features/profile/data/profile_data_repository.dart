@@ -9,7 +9,6 @@ part 'profile_data_repository.g.dart';
 Stream<DocumentSnapshot<Map<String, dynamic>>> getUserData(Ref ref) {
   User? user = FirebaseAuth.instance.currentUser;
   if (user == null) {
-    // Kullanıcı yoksa boş stream döndür
     return const Stream<DocumentSnapshot<Map<String, dynamic>>>.empty();
   }
 

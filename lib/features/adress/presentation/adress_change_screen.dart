@@ -60,9 +60,8 @@ class _AdressChangeScreenState extends ConsumerState<AdressChangeScreen> {
               itemBuilder: (BuildContext context, int index) {
                 AddressModel? address = box.getAt(index);
 
-                // Dismissible: Kaydırarak silme özelliği
                 return Dismissible(
-                  key: Key('${address?.cityName}_$index'), // Unique key önemli
+                  key: Key('${address?.cityName}_$index'), 
                   direction: DismissDirection.endToStart,
                   onDismissed: (DismissDirection direction) {
                     if (address.title == selectedAdress.title) {
@@ -98,7 +97,6 @@ class _AdressChangeScreenState extends ConsumerState<AdressChangeScreen> {
     );
   }
 
-  // Boş Durum Tasarımı
   Widget _buildEmptyState() {
     return Center(
       child: Column(
@@ -163,12 +161,9 @@ class _PremiumCardState extends ConsumerState<PremiumCard> {
       decoration: BoxDecoration(
         color: AppColors.background,
         borderRadius: BorderRadius.circular(20),
-        // --- DEĞİŞİKLİK BURADA ---
-        // Eğer seçiliyse turuncu kenarlık, değilse kenarlık yok
         border: isSelected
             ? Border.all(color: AppColors.primaryOrange, width: 2)
             : null,
-        // -------------------------
         boxShadow: <BoxShadow>[
           BoxShadow(
             color: Colors.grey.withValues(alpha: 0.28),
@@ -187,12 +182,10 @@ class _PremiumCardState extends ConsumerState<PremiumCard> {
           padding: const EdgeInsets.all(20),
           child: Row(
             children: <Widget>[
-              // Sol taraftaki İkon Kutusu
               Container(
                 height: 50,
                 width: 50,
                 decoration: BoxDecoration(
-                  // İsteğe bağlı: Seçiliyse ikon kutusunun rengini de değiştirebilirsin
                   color: isSelected
                       ? AppColors.primaryOrange
                       : AppColors.primaryOrange.withValues(alpha: 0.1),
@@ -200,13 +193,10 @@ class _PremiumCardState extends ConsumerState<PremiumCard> {
                 ),
                 child: Icon(
                   Icons.location_on_rounded,
-                  // İsteğe bağlı: Seçiliyse ikon beyaz olsun
                   color: isSelected ? Colors.white : AppColors.primaryOrange,
                 ),
               ),
               const SizedBox(width: 16),
-
-              // Orta Kısım: Yazılar
               Expanded(
                 child: Column(
                   spacing: 4,

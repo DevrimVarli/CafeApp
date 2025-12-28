@@ -13,6 +13,7 @@ class ProfileLogoutButton extends StatefulWidget {
 class _ProfileLogoutButtonState extends State<ProfileLogoutButton> {
   @override
   Widget build(BuildContext context) {
+    context.locale;
     return TextButton(
       onPressed: () async {
         await FirebaseAuth.instance.signOut();

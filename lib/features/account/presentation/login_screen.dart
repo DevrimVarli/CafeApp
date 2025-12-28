@@ -1,7 +1,8 @@
+import 'package:cafe_app/constants/app_colors.dart';
+import 'package:cafe_app/features/account/controller/is_loading.dart';
 import 'package:cafe_app/features/account/controller/is_login.dart';
 import 'package:cafe_app/features/account/controller/obsecure_ctrl.dart';
 import 'package:cafe_app/features/account/controller/remember_me_ctr.dart';
-import 'package:cafe_app/features/account/data/google_sign_in.dart';
 import 'package:cafe_app/features/account/data/sign_in_repository.dart';
 import 'package:cafe_app/features/account/presentation/widgets/login_form_card.dart';
 import 'package:cafe_app/features/account/presentation/widgets/login_hero_header.dart';
@@ -23,8 +24,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   final TextEditingController _emailCtrl = TextEditingController();
   final TextEditingController _passCtrl = TextEditingController();
 
-  final bool _loading = false;
-
   @override
   void dispose() {
     _emailCtrl.dispose();
@@ -38,9 +37,10 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     bool _rememberMe = ref.watch(rememberMeCtrProvider);
     MediaQueryData media = MediaQuery.of(context);
     double topH = media.size.height * 0.33;
+    bool _isLoading = ref.watch(isLoadingProvider);
 
     return Scaffold(
-      backgroundColor: const Color(0xFFF6F6F8),
+      backgroundColor: AppColors.white,
       body: Stack(
         children: <Widget>[
           LoginHeroHeader(height: topH),
@@ -66,34 +66,25 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                       ),
                     ),
                     LoginFormCard(
+                      isLogin: true,
                       formKey: _formKey,
                       emailCtrl: _emailCtrl,
                       passCtrl: _passCtrl,
                       obscure: _obscure,
+                      loading: _isLoading,
                       rememberMe: _rememberMe,
-                      loading: _loading,
-                      onToggleObscure: () =>
-                          ref.read(obsecureCtrlProvider.notifier).change(),
                       onRememberMeChanged: (bool v) =>
                           ref.read(rememberMeCtrProvider.notifier).change(),
-                      onLoginTap: () {
-                        if (_formKey.currentState?.validate() ?? false) {
-                          ref.read(
-                            signInRepositoryProvider(
-                              email: _emailCtrl.text,
-                              password: _passCtrl.text,
-                              context: context,
-                            ),
-                          );
-                        }
-                      },
                       onForgotTap: () {},
-                      onGoogleTap: () =>
-                          ref.read(signInWithGoogleProvider(context)),
+                      onToggleObscure: () =>
+                          ref.read(obsecureCtrlProvider.notifier).change(),
+                      onMainTap: () =>
+                          ref.read(signInRepositoryProvider(context: context,email: _emailCtrl.text,password: _passCtrl.text)),
+                      onGoogleTap: () {},
                       onAppleTap: () {},
-                      onCreateAccountTap: () =>
-                          ref.read(isLoginProvider.notifier).change(),
+                      onSwitchTap: ref.read(isLoginProvider.notifier).change,
                     ),
+
                     Text(
                       'terms_privacy_policy'.tr(),
                       textAlign: TextAlign.center,

@@ -20,7 +20,6 @@ class ProfileHeader extends StatelessWidget {
         Stack(
           alignment: Alignment.center,
           children: <Widget>[
-            // Arkadaki dekoratif halka
             Container(
               width: 110,
               height: 110,
@@ -32,7 +31,6 @@ class ProfileHeader extends StatelessWidget {
                 ),
               ),
             ),
-            // Avatarın kendisi
             Container(
               width: 100,
               height: 100,
@@ -60,7 +58,6 @@ class ProfileHeader extends StatelessWidget {
                 ),
               ),
             ),
-            // Düzenleme ikonu
             Positioned(
               bottom: 0,
               right: 0,

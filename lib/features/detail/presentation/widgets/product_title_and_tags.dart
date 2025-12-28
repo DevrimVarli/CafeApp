@@ -1,5 +1,4 @@
 
-// 3. Başlık ve Etiketler Bileşeni
 import 'package:cafe_app/constants/app_colors.dart';
 import 'package:cafe_app/features/home/domain/coffie_model.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +12,7 @@ class ProductTitleAndTags extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
+      children: <Widget>[
         Text(
           coffieModel.name,
           style: GoogleFonts.sora(

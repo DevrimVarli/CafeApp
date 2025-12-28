@@ -9,7 +9,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_ce_flutter/adapters.dart';
 
 class BasketListView extends StatelessWidget {
-
   const BasketListView({super.key, required this.sepetBox});
   final Box<BasketCoffieModel> sepetBox;
 
@@ -35,13 +34,18 @@ class BasketListView extends StatelessWidget {
               physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               itemCount: sepetList.length,
-              separatorBuilder: (BuildContext context, int index) => const SizedBox(height: 16),
+              separatorBuilder: (BuildContext context, int index) =>
+                  const SizedBox(height: 16),
               itemBuilder: (BuildContext context, int index) {
+                BasketCoffieModel item = sepetList[index];
+
+                String uniqueKey =
+                    '${item.coffieModel.id}_${item.selectedSize.size}';
                 return BasketItemCard(
-                  item: sepetList[index],
+                  item: item,
                   onIncrement: () {
                     sepetBox.put(
-                      sepetList[index].coffieModel.id,
+                      uniqueKey,
                       BasketCoffieModel(
                         coffieModel: sepetList[index].coffieModel,
                         count: sepetList[index].count + 1,
@@ -52,7 +56,7 @@ class BasketListView extends StatelessWidget {
                   onDecrement: () {
                     if (sepetList[index].count > 1) {
                       sepetBox.put(
-                        sepetList[index].coffieModel.id,
+                        uniqueKey,
                         BasketCoffieModel(
                           coffieModel: sepetList[index].coffieModel,
                           count: sepetList[index].count - 1,
@@ -60,7 +64,7 @@ class BasketListView extends StatelessWidget {
                         ),
                       );
                     } else {
-                      sepetBox.delete(sepetList[index].coffieModel.id);
+                      sepetBox.delete(uniqueKey);
                     }
                   },
                 );

@@ -1,5 +1,4 @@
 
-// 7. Miktar Arttırma/Azaltma Bileşeni
 import 'package:cafe_app/constants/app_colors.dart';
 import 'package:cafe_app/features/detail/controller/coffie_count_controller.dart';
 import 'package:flutter/material.dart';

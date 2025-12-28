@@ -1,5 +1,3 @@
-
-// 6. Boyut Seçici Bileşeni
 import 'package:cafe_app/constants/app_colors.dart';
 import 'package:cafe_app/features/home/domain/coffie_size_model.dart';
 import 'package:flutter/material.dart';

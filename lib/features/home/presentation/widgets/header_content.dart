@@ -48,7 +48,6 @@ class HeaderContent extends ConsumerWidget {
           ),
         ),
         const SizedBox(height: 24),
-        // Arama ve Filtre Row'u
         Row(
           children: <Widget>[
             Expanded(

@@ -35,7 +35,7 @@ class LoginHeroHeader extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(20, 56, 20, 18),
+            padding: const EdgeInsets.fromLTRB(20, 56, 20, 40),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               spacing: 8,

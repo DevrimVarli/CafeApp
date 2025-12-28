@@ -4,7 +4,6 @@ import 'package:cafe_app/features/basket/presentation/widgets/delivery_stores_se
 import 'package:cafe_app/features/basket/presentation/widgets/section_divider.dart';
 import 'package:cafe_app/features/basket/presentation/widgets/sticky_order_bottom_bar.dart';
 import 'package:cafe_app/utils/calculate_total_price.dart';
-import 'package:cafe_app/utils/format_price.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

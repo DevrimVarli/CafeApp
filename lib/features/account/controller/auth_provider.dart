@@ -2,10 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-// Bu satırı dosya adınla aynı olacak şekilde eklemelisin
+
 part 'auth_provider.g.dart';
 
-// keepAlive: true -> Sayfa değişse bile oturum bilgisini hafızada tutar.
 @Riverpod(keepAlive: true)
 Stream<User?> authState(Ref ref) {
   return FirebaseAuth.instance.authStateChanges();

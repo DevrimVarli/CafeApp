@@ -78,7 +78,6 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
                   ),
                   const SizedBox(height: 20),
 
-                  // 6. Sayaç (Arttır/Azalt)
                   const QuantityCounter(),
                 ],
               ),

@@ -1,6 +1,7 @@
 import 'package:cafe_app/constants/app_colors.dart';
 import 'package:cafe_app/features/basket/presentation/widgets/delivery_address_section.dart';
 import 'package:cafe_app/features/home/controller/selected_store.dart';
+import 'package:cafe_app/features/stores/domain/stores_model.dart';
 import 'package:cafe_app/router/app_router_name.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -13,21 +14,20 @@ class DeliveryStoresSection extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    var selectedStore = ref.watch(selectedStoreProvider);
+    StoresModel selectedStore = ref.watch(selectedStoreProvider);
     if (selectedStore.name.isEmpty) {
       return _EmptyStore(
         onSelect: () =>
-            context.push(AppRouterName.stores), // Mağaza seçme ekranına git
+            context.push(AppRouterName.stores), 
       );
     }
 
-    // 3. Dolu mağaza durumu
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
           'delivery_store'
-              .tr(), // "Teslimat Şubesi" (Json'a eklemeyi unutmayın)
+              .tr(), 
           style: GoogleFonts.sora(
             fontWeight: FontWeight.bold,
             fontSize: 18,
@@ -42,7 +42,6 @@ class DeliveryStoresSection extends ConsumerWidget {
                 spacing: 4,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  // Mağaza Adı
                   Text(
                     selectedStore.name,
                     style: GoogleFonts.sora(
@@ -52,8 +51,6 @@ class DeliveryStoresSection extends ConsumerWidget {
                     ),
                   ),
 
-                  // Mağaza Adresi / Konumu
-                  // (Modelinizde 'address' alanı yoksa 'location' vb. ile değiştirin)
                   Text(
                     selectedStore.address,
                     style: GoogleFonts.sora(
@@ -66,26 +63,22 @@ class DeliveryStoresSection extends ConsumerWidget {
                     overflow: TextOverflow.ellipsis,
                   ),
 
-                  // Opsiyonel: Mağaza çalışma saatleri veya durumu
-                  if (selectedStore.openingHours == true) // Modelde varsa
-                    Text(
-                      'open_now'.tr(), // "Şu an Açık"
-                      style: GoogleFonts.sora(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 12,
-                        color: Colors.green,
-                      ),
+                  Text(
+                    'open_now'.tr(), 
+                    style: GoogleFonts.sora(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 12,
+                      color: Colors.green,
                     ),
+                  ),
                 ],
               ),
             ),
 
-            // Değiştir Butonu
             OutlinedBtn(
               icon: Icons.storefront_outlined,
-              text: 'change'.tr(), // "Değiştir"
+              text: 'change'.tr(), 
               onTap: () {
-                // Mağaza listesi veya harita sayfasına yönlendirme
                 context.push(AppRouterName.stores);
               },
             ),
@@ -96,7 +89,6 @@ class DeliveryStoresSection extends ConsumerWidget {
   }
 }
 
-// Adres yerine Store için özelleştirilmiş boş durum
 class _EmptyStore extends StatelessWidget {
   const _EmptyStore({required this.onSelect});
   final VoidCallback onSelect;
@@ -116,7 +108,7 @@ class _EmptyStore extends StatelessWidget {
         ),
         const SizedBox(height: 10),
         Text(
-          'store_not_selected'.tr(), // "Mağaza Seçilmedi"
+          'store_not_selected'.tr(), 
           style: GoogleFonts.sora(
             fontWeight: FontWeight.w700,
             fontSize: 14,

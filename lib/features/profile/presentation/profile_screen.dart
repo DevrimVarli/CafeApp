@@ -64,7 +64,6 @@ class ProfileScreen extends ConsumerWidget {
                 child: Column(
                   children: <Widget>[
                     const SizedBox(height: 10),
-                    // 1. Profil Başlığı (Avatar + İsim)
                     ProfileHeader(
                       user: user,
                       primaryColor: AppColors.primaryOrange,
@@ -72,8 +71,6 @@ class ProfileScreen extends ConsumerWidget {
                     ),
 
                     const SizedBox(height: 40),
-
-                    // 2. Ayarlar Başlığı
                     Padding(
                       padding: const EdgeInsets.only(left: 8, bottom: 12),
                       child: Align(
@@ -90,7 +87,6 @@ class ProfileScreen extends ConsumerWidget {
                       ),
                     ),
 
-                    // 3. Menü Kutusu
                     DecoratedBox(
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -107,7 +103,6 @@ class ProfileScreen extends ConsumerWidget {
                       ),
                       child: Column(
                         children: <Widget>[
-                          // Karanlık Mod Ayarı
                           ProfileSettingsTile(
                             icon: Icons.dark_mode_outlined,
                             title: 'dark_mode'.tr(),
@@ -121,7 +116,6 @@ class ProfileScreen extends ConsumerWidget {
                               inactiveThumbColor: AppColors.textDark,
                             ),
                           ),
-                          // Dil Seçeneği Ayarı
                           ProfileSettingsTile(
                             icon: Icons.language_outlined,
                             title: 'language_option'.tr(),
@@ -132,8 +126,6 @@ class ProfileScreen extends ConsumerWidget {
                             trailing: Row(
                               mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
-                                // ...
-                                // DÜZELTİLEN KISIM BURASI
                                 Text(
                                   'language_${context.locale.languageCode}'
                                       .tr(), // Tırnakları kaldırdık
@@ -144,7 +136,6 @@ class ProfileScreen extends ConsumerWidget {
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
-                                // ...
                                 const SizedBox(width: 8),
                                 const Icon(
                                   Icons.arrow_forward_ios,

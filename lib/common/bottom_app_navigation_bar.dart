@@ -18,12 +18,11 @@ class BottomAppNavigationBar extends ConsumerStatefulWidget {
 
 class _BottomAppNavigationBarState
     extends ConsumerState<BottomAppNavigationBar> {
-  /// Alt menüdeki sayfaların listesi
   final List<Widget> sayfaListesi = <Widget>[
-    const HomeScreen(), // Home
-    const FavoriteScreen(), // Search / Account
-    const BasketScreen(), // Favorites
-    const AccountScreen(), // Profile
+    const HomeScreen(), 
+    const FavoriteScreen(),
+    const BasketScreen(), 
+    const AccountScreen(), 
   ];
 
   @override
@@ -32,10 +31,8 @@ class _BottomAppNavigationBarState
     ColorScheme colorScheme = Theme.of(context).colorScheme;
 
     return Scaffold(
-      /// Seçilen sekmeye karşılık gelen ekran
       body: sayfaListesi[selectedIndex],
 
-      /// Alt menü
       bottomNavigationBar: ClipRRect(
         borderRadius: BorderRadius.circular(32),
         child: DecoratedBox(

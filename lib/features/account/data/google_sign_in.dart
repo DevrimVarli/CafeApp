@@ -11,7 +11,7 @@ Future<void> signInWithGoogle(Ref ref, BuildContext context) async {
     GoogleSignIn googleSignIn = GoogleSignIn();
     GoogleSignInAccount? googleUser = await googleSignIn.signIn();
 
-    // Kullanıcı giriş iptali yaparsa
+
     if (googleUser == null) {
       if (context.mounted) {
         ScaffoldMessenger.of(
@@ -31,7 +31,6 @@ Future<void> signInWithGoogle(Ref ref, BuildContext context) async {
     UserCredential userCredential = await FirebaseAuth.instance
         .signInWithCredential(credential);
 
-    // Başarılı giriş mesajı
     if (context.mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(

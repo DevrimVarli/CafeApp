@@ -26,7 +26,6 @@ class EmptyStateSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        // Ana Başlık
         Text(
           headerTitle,
           style: GoogleFonts.sora(
@@ -36,8 +35,6 @@ class EmptyStateSection extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 10),
-
-        // Durum Başlığı (Bold)
         Text(
           statusTitle,
           style: GoogleFonts.sora(
@@ -47,8 +44,6 @@ class EmptyStateSection extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 6),
-
-        // Açıklama Metni
         Text(
           description,
           style: GoogleFonts.sora(
@@ -59,7 +54,6 @@ class EmptyStateSection extends StatelessWidget {
         ),
         const SizedBox(height: 14),
 
-        // Buton
         AppOutlinedButton(icon: buttonIcon, text: buttonText, onTap: onTap),
       ],
     );

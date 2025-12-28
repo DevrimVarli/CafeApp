@@ -2,7 +2,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class LanguageBottomSheet {
-  // Statik renk tanımı veya theme'den çekilebilir
   static const Color primaryOrange = Color(0xFFC67C4E);
 
   static void show(BuildContext context) {
@@ -42,7 +41,6 @@ class LanguageBottomSheet {
     String languageCode,
     String displayName,
   ) {
-    // Şu anki dil bu mu?
     bool isSelected = context.locale.languageCode == languageCode;
 
     return DecoratedBox(
@@ -59,7 +57,6 @@ class LanguageBottomSheet {
       ),
       child: ListTile(
         onTap: () {
-          // Dile tıklandığında o dile geçiş yap
           context.setLocale(Locale(languageCode));
           Navigator.pop(context);
         },

@@ -1,4 +1,4 @@
-// 5. Açıklama Bileşeni
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -11,7 +11,7 @@ class ProductDescription extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
+      children: <Widget>[
         Text(
           'description'.tr(),
           style: GoogleFonts.sora(fontWeight: FontWeight.w600, fontSize: 18),

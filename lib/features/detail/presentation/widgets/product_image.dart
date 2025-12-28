@@ -1,5 +1,5 @@
 
-// 2. Resim Bileşeni
+
 import 'package:flutter/material.dart';
 
 class ProductImage extends StatelessWidget {

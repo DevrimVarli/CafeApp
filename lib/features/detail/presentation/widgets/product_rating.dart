@@ -1,11 +1,11 @@
 
-// 4. Puanlama (Rating) Bileşeni
+import 'package:cafe_app/features/home/domain/coffie_rating_model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ProductRating extends StatelessWidget {
   const ProductRating({super.key, required this.rating});
-  final dynamic rating; // Rating modelinizin tipini buraya yazın
+  final CoffieRatingModel rating; 
 
   @override
   Widget build(BuildContext context) {

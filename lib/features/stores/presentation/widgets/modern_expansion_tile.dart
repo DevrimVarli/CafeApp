@@ -108,8 +108,6 @@ class _ModernExpansionTileState extends ConsumerState<ModernExpansionTile> {
                   ),
                 ),
                 const SizedBox(height: 12),
-                // Günleri anahtar kelime (key) olarak gönderiyoruz,
-                // DayRow içinde .tr() ile çevrilecekler.
                 DayRow(day: 'monday', hours: widget.store.openingHours.mon),
                 DayRow(day: 'tuesday', hours: widget.store.openingHours.tue),
                 DayRow(day: 'wednesday', hours: widget.store.openingHours.wed),

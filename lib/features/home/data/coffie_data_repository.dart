@@ -14,16 +14,12 @@ Future<List<CoffieModel>> coffieDataRepository(Ref ref) async {
   );
 
   if (response.statusCode == 200) {
-    // response.data'nın bir String olduğunu varsayarak jsonDecode kullanıyoruz
     dynamic decodedData = jsonDecode(response.data.toString());
-
-    // Şimdi ayrıştırılmış verinin Map olduğundan eminiz
     Map<String, dynamic> data =
         decodedData
-            as Map<String, dynamic>; // 2. Decode edilmiş veriyi Map'e cast et
+            as Map<String, dynamic>;
 
     List<dynamic> result = data['products'] as List<dynamic>;
-    // ... (rest of your code)
     return result
         .map((dynamic e) => CoffieModel.fromJson(e as Map<String, dynamic>))
         .toList();

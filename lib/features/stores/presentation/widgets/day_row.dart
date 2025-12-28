@@ -9,16 +9,12 @@ class DayRow extends StatelessWidget {
     required this.hours,
     this.isLast = false,
   });
-
-  // 'day' değişkeninin "monday", "saturday" gibi json anahtarları
-  // formatında geldiğini varsayıyoruz.
   final String day;
   final DailyHoursModel hours;
   final bool isLast;
 
   @override
   Widget build(BuildContext context) {
-    // Kontrolü artık Türkçe metne göre değil, anahtar kelimeye göre yapıyoruz
     bool isWeekend = day == 'saturday' || day == 'sunday';
 
     String open = hours.open.trim();
@@ -32,7 +28,7 @@ class DayRow extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Text(
-            day.tr(), // Örn: 'monday' -> "Pazartesi" olarak çevrilir
+            day.tr(), 
             style: TextStyle(
               color: isWeekend
                   ? const Color(0xFF4E342E)

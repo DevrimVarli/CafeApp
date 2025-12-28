@@ -1,6 +1,4 @@
-// --- BİLEŞENLER (COMPONENTS) ---
 
-// 1. AppBar Bileşeni
 import 'package:cafe_app/features/home/domain/coffie_model.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
