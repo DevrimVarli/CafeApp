@@ -1,4 +1,4 @@
-import 'package:easy_localization/easy_localization.dart'; // Bunu eklemeyi unutma
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -35,14 +35,14 @@ class LoginHeroHeader extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(20, 56, 20, 40),
+            padding: const EdgeInsets.fromLTRB(20, 56, 20, 60),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               spacing: 8,
               children: <Widget>[
                 const Spacer(flex: 2),
                 Text(
-                  'welcome_back'.tr(), // JSON: "Tekrar Hoş Geldin"
+                  'welcome_back'.tr(),
                   style: GoogleFonts.sora(
                     color: Colors.white,
                     fontSize: 26,
@@ -51,8 +51,7 @@ class LoginHeroHeader extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'login_subtitle'
-                      .tr(), // JSON: "Kahve yolculuğuna devam et..."
+                  'login_subtitle'.tr(),
                   style: GoogleFonts.sora(
                     color: Colors.white.withValues(alpha: 0.88),
                     fontSize: 13.5,

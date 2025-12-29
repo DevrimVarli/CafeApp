@@ -1,5 +1,5 @@
 import 'package:cafe_app/constants/app_colors.dart';
-import 'package:cafe_app/features/account/domain/user_model.dart';
+import 'package:cafe_app/features/authentication/domain/user_model.dart';
 import 'package:cafe_app/features/basket/presentation/widgets/soft_background_decor.dart';
 import 'package:cafe_app/features/profile/data/profile_data_repository.dart';
 import 'package:cafe_app/features/profile/presentation/widgets/language_bottom_sheet.dart';
@@ -128,7 +128,7 @@ class ProfileScreen extends ConsumerWidget {
                               children: <Widget>[
                                 Text(
                                   'language_${context.locale.languageCode}'
-                                      .tr(), // Tırnakları kaldırdık
+                                      .tr(), 
                                   style: TextStyle(
                                     color: AppColors.primaryOrange.withValues(
                                       alpha: 0.8,

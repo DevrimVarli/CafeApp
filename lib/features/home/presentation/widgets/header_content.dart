@@ -1,8 +1,10 @@
 import 'package:cafe_app/constants/app_colors.dart';
+import 'package:cafe_app/features/home/controller/search_controller.dart';
 import 'package:cafe_app/features/home/controller/selected_store.dart';
+import 'package:cafe_app/features/home/presentation/widgets/filtered_bottom_sheet.dart';
 import 'package:cafe_app/features/stores/domain/stores_model.dart';
 import 'package:cafe_app/router/app_router_name.dart';
-import 'package:easy_localization/easy_localization.dart'; // Eklendi
+import 'package:easy_localization/easy_localization.dart'; 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -17,7 +19,7 @@ class HeaderContent extends ConsumerWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-          'location'.tr(), // "Konum"
+          'location'.tr(), 
           style: TextStyle(
             color: Colors.grey.shade400,
             fontSize: 14,
@@ -34,7 +36,7 @@ class HeaderContent extends ConsumerWidget {
               Text(
                 selectedStore.name.isEmpty
                     ? 'select_branch'
-                          .tr() // "Şube Seçiniz"
+                          .tr() 
                     : selectedStore.name,
                 style: TextStyle(
                   color: Colors.white.withValues(alpha: 0.9),
@@ -53,10 +55,13 @@ class HeaderContent extends ConsumerWidget {
             Expanded(
               child: TextField(
                 style: const TextStyle(color: Colors.white),
+                onChanged: (String value) => ref
+                    .read(searchControllerProvider.notifier)
+                    .changeIndex(value),
                 decoration: InputDecoration(
                   filled: true,
                   fillColor: Colors.white.withValues(alpha: 0.06),
-                  hintText: 'search_coffee'.tr(), // "Kahve ara"
+                  hintText: 'search_coffee'.tr(), 
                   hintStyle: TextStyle(
                     color: Colors.white.withValues(alpha: 0.6),
                   ),
@@ -69,14 +74,17 @@ class HeaderContent extends ConsumerWidget {
               ),
             ),
             const SizedBox(width: 12),
-            Container(
-              width: 50,
-              height: 50,
-              decoration: BoxDecoration(
-                color: AppColors.primaryOrange,
-                borderRadius: BorderRadius.circular(16),
+            GestureDetector(
+              onTap: () => FilteredBottomSheet.show(context),
+              child: Container(
+                width: 50,
+                height: 50,
+                decoration: BoxDecoration(
+                  color: AppColors.primaryOrange,
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: const Icon(Icons.tune, color: Colors.white),
               ),
-              child: const Icon(Icons.tune, color: Colors.white),
             ),
           ],
         ),

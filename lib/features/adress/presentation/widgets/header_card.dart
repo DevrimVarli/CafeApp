@@ -1,6 +1,6 @@
 import 'package:cafe_app/constants/app_colors.dart';
 import 'package:cafe_app/features/adress/controller/selected_addres_type.dart';
-import 'package:easy_localization/easy_localization.dart'; // Eklendi
+import 'package:easy_localization/easy_localization.dart'; 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -30,7 +30,7 @@ class HeaderCard extends ConsumerWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Text(
-              'address_type'.tr(), // "Adres Tipi"
+              'address_type'.tr(),  
               style: GoogleFonts.sora(
                 fontWeight: FontWeight.w900,
                 color: Colors.black87,
@@ -43,7 +43,7 @@ class HeaderCard extends ConsumerWidget {
             children: <Widget>[
               Expanded(
                 child: _TypeChip(
-                  text: 'home'.tr(), // "Ev"
+                  text: 'home'.tr(), 
                   icon: Icons.home_rounded,
                   selected: addressType == 0,
                   onTap: () =>
@@ -53,7 +53,7 @@ class HeaderCard extends ConsumerWidget {
               const SizedBox(width: 10),
               Expanded(
                 child: _TypeChip(
-                  text: 'work'.tr(), // "İş"
+                  text: 'work'.tr(), 
                   icon: Icons.work_rounded,
                   selected: addressType == 1,
                   onTap: () =>
@@ -63,7 +63,7 @@ class HeaderCard extends ConsumerWidget {
               const SizedBox(width: 10),
               Expanded(
                 child: _TypeChip(
-                  text: 'other'.tr(), // "Diğer"
+                  text: 'other'.tr(), 
                   icon: Icons.grid_view_rounded,
                   selected: addressType == 2,
                   onTap: () =>

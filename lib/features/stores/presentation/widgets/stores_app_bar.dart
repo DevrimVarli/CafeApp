@@ -1,5 +1,5 @@
 import 'package:cafe_app/constants/app_colors.dart';
-import 'package:easy_localization/easy_localization.dart'; // Eklendi
+import 'package:easy_localization/easy_localization.dart'; 
 import 'package:flutter/material.dart';
 
 class StoresAppBar extends StatelessWidget {
@@ -20,7 +20,7 @@ class StoresAppBar extends StatelessWidget {
       ),
       centerTitle: true,
       title: Text(
-        'branches_title'.tr(), // "Şubelerimiz"
+        'branches_title'.tr(), 
         style: const TextStyle(
           color: AppColors.primaryOrange,
           fontWeight: FontWeight.w900,

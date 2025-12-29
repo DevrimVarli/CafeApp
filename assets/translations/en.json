@@ -6,6 +6,7 @@
   "category_error": "Category Error: {error}",
   "data_not_found": "Data not found.",
   "no_products_in_category": "No products found in this category.",
+   "categories":"Categories",
 
   "location": "Location",
   "select_branch": "Select Branch",
@@ -135,7 +136,7 @@
   "select_store": "Select Store",
   "location_unknown": "Location unknown",
   "open_now": "Open Now",
-
+  "apply":"Apply",
   "nav_home": "Home",
   "nav_search": "Search",
   "nav_basket": "Basket",

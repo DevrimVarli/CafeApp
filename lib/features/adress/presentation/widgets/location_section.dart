@@ -5,7 +5,7 @@ import 'package:cafe_app/features/adress/presentation/widgets/dropdown_shell.dar
 import 'package:cafe_app/features/adress/presentation/widgets/fancy_field.dart';
 import 'package:cafe_app/utils/first_where_or_null_exensiont.dart';
 import 'package:cafe_app/utils/validators.dart';
-import 'package:easy_localization/easy_localization.dart'; // Eklendi
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -60,7 +60,7 @@ class LocationSection extends StatelessWidget {
               children: <Widget>[
                 Expanded(
                   child: DropdownShell(
-                    label: 'city'.tr(), // "Şehir"
+                    label: 'city'.tr(),
                     value: safeCity,
                     items: cityNames,
                     icon: Icons.location_city_rounded,
@@ -70,7 +70,7 @@ class LocationSection extends StatelessWidget {
                 const SizedBox(width: 10),
                 Expanded(
                   child: DropdownShell(
-                    label: 'district'.tr(), // "İlçe"
+                    label: 'district'.tr(),
                     value: safeDistrict,
                     items: districtNames,
                     icon: Icons.map_outlined,
@@ -82,8 +82,8 @@ class LocationSection extends StatelessWidget {
             const SizedBox(height: 12),
             FancyField(
               controller: addressCtrl,
-              label: 'address_label'.tr(), // "Adres"
-              hint: 'address_details_hint'.tr(), // "Mahalle, sokak..."
+              label: 'address_label'.tr(), 
+              hint: 'address_details_hint'.tr(), 
               prefix: Icons.home_outlined,
               maxLines: 3,
               validator: AddressValidators.address,
@@ -91,8 +91,8 @@ class LocationSection extends StatelessWidget {
             const SizedBox(height: 12),
             FancyField(
               controller: noteCtrl,
-              label: 'address_note_label'.tr(), // "Adres Notu (Opsiyonel)"
-              hint: 'address_note_hint'.tr(), // "Kapı şifresi, tarif..."
+              label: 'address_note_label'.tr(), 
+              hint: 'address_note_hint'.tr(),
               prefix: Icons.sticky_note_2_outlined,
               maxLines: 2,
             ),

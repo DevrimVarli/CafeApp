@@ -6,6 +6,7 @@
   "category_error": "Kategori Hatası: {error}",
   "data_not_found": "Veri bulunamadı.",
   "no_products_in_category": "Bu kategoride ürün bulunamadı.",
+  "categories":"Kategoriler",
   
   "location": "Konum",
   "select_branch": "Şube Seçiniz",
@@ -134,6 +135,7 @@
   "select_store": "Şube Seç",
   "location_unknown": "Konum bilgisi yok",
   "open_now": "Şu an Açık",
+  "apply":"Uygula",
 
 
   "nav_home": "Ana Sayfa",

@@ -6,11 +6,11 @@ import 'package:google_fonts/google_fonts.dart';
 class EmptyStateSection extends StatelessWidget {
   const EmptyStateSection({
     super.key,
-    required this.headerTitle, // Örn: "Teslimat Şubesi"
-    required this.statusTitle, // Örn: "Şube Seçilmedi"
-    required this.description, // Örn: "Sipariş vermek için..."
-    required this.buttonText, // Örn: "Şube Seç"
-    required this.buttonIcon, // İkonu da dinamik yaptık
+    required this.headerTitle,
+    required this.statusTitle, 
+    required this.description, 
+    required this.buttonText, 
+    required this.buttonIcon, 
     required this.onTap,
   });
 

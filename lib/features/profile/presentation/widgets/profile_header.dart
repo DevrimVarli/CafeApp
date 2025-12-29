@@ -1,4 +1,4 @@
-import 'package:cafe_app/features/account/domain/user_model.dart';
+import 'package:cafe_app/features/authentication/domain/user_model.dart';
 import 'package:flutter/material.dart';
 
 class ProfileHeader extends StatelessWidget {

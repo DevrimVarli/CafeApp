@@ -118,7 +118,7 @@ class _EmptyStore extends StatelessWidget {
         const SizedBox(height: 6),
         Text(
           'start_by_selecting_store'
-              .tr(), // "Sipariş vermek için bir şube seçin."
+              .tr(), 
           style: GoogleFonts.sora(
             fontWeight: FontWeight.w500,
             fontSize: 13,
@@ -128,7 +128,7 @@ class _EmptyStore extends StatelessWidget {
         const SizedBox(height: 14),
         OutlinedBtn(
           icon: Icons.store_mall_directory_outlined,
-          text: 'select_store'.tr(), // "Şube Seç"
+          text: 'select_store'.tr(), 
           onTap: onSelect,
         ),
       ],

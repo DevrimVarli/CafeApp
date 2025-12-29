@@ -1,12 +1,14 @@
 import 'package:cafe_app/features/detail/presentation/detail_screen.dart';
 import 'package:cafe_app/features/home/controller/categories_index.dart';
+import 'package:cafe_app/features/home/controller/search_controller.dart';
 import 'package:cafe_app/features/home/data/categories_data_repository.dart';
 import 'package:cafe_app/features/home/data/coffie_data_repository.dart';
 import 'package:cafe_app/features/home/domain/categories_model.dart';
 import 'package:cafe_app/features/home/domain/coffie_model.dart';
+import 'package:cafe_app/utils/currency_format_extension.dart';
 import 'package:cafe_app/utils/get_categories_coffies.dart';
 import 'package:cafe_app/utils/shimmer_extension.dart';
-import 'package:easy_localization/easy_localization.dart'; // Eklendi
+import 'package:easy_localization/easy_localization.dart'; 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -55,14 +57,18 @@ class _ProductGridViewState extends ConsumerState<ProductGridView> {
     if (asyncCoffies.hasError) {
       return Center(
         child: Text(
-          'coffee_error'.tr(namedArgs: <String, String>{'error': '${asyncCoffies.error}'}),
+          'coffee_error'.tr(
+            namedArgs: <String, String>{'error': '${asyncCoffies.error}'},
+          ),
         ),
       );
     }
     if (asyncCategories.hasError) {
       return Center(
         child: Text(
-          'category_error'.tr(namedArgs: <String, String>{'error': '${asyncCategories.error}'}),
+          'category_error'.tr(
+            namedArgs: <String, String>{'error': '${asyncCategories.error}'},
+          ),
         ),
       );
     }
@@ -71,7 +77,7 @@ class _ProductGridViewState extends ConsumerState<ProductGridView> {
     List<CategoriesModel>? categories = asyncCategories.valueOrNull;
 
     if (coffies == null || categories == null) {
-      return Center(child: Text('data_not_found'.tr())); // "Veri bulunamadı."
+      return Center(child: Text('data_not_found'.tr())); 
     }
 
     List<CoffieModel> filteredData = getCategoriesCoffies(
@@ -85,12 +91,15 @@ class _ProductGridViewState extends ConsumerState<ProductGridView> {
         child: Padding(
           padding: const EdgeInsets.all(20),
           child: Text(
-            'no_products_in_category'.tr(), // "Bu kategoride ürün bulunamadı."
+            'no_products_in_category'.tr(), 
           ),
         ),
       );
     }
-
+    String searchValue = ref.watch(searchControllerProvider);
+    List<CoffieModel> lastData = filteredData
+        .where((CoffieModel b) => b.name.toLowerCase().contains(searchValue.toLowerCase()))
+        .toList();
     return GridView.builder(
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
@@ -101,9 +110,11 @@ class _ProductGridViewState extends ConsumerState<ProductGridView> {
         crossAxisSpacing: 16,
         childAspectRatio: 0.75,
       ),
-      itemCount: filteredData.length,
+      itemCount: searchValue == '' ? filteredData.length : lastData.length,
       itemBuilder: (BuildContext context, int index) {
-        CoffieModel coffie = filteredData[index];
+        CoffieModel coffie = searchValue == ''
+            ? filteredData[index]
+            : lastData[index];
         return DecoratedBox(
           decoration: BoxDecoration(
             color: Colors.white,
@@ -186,7 +197,9 @@ class _ProductGridViewState extends ConsumerState<ProductGridView> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         Text(
-                          '\$${coffie.sizes.isNotEmpty ? coffie.sizes.first.price : "0"}',
+                          coffie.sizes.isNotEmpty
+                              ? coffie.sizes.first.price.toPrice
+                              : '0',
                           style: TextStyle(
                             fontSize: 14,
                             color: Colors.grey.shade600,

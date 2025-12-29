@@ -1,5 +1,5 @@
 import 'package:cafe_app/common/controller/selected_page_index.dart';
-import 'package:cafe_app/features/account/presentation/account_screen.dart';
+import 'package:cafe_app/features/authentication/presentation/account_screen.dart';
 import 'package:cafe_app/features/basket/presentation/basket_screen.dart';
 import 'package:cafe_app/features/favorite/presentation/favorite_screen.dart';
 import 'package:cafe_app/features/home/presentation/home_screen.dart';

@@ -3,11 +3,11 @@ import 'package:easy_localization/easy_localization.dart';
 String getAddressType(int value) {
   switch (value) {
     case 0:
-      return 'home'.tr(); // "Ev"
+      return 'home'.tr(); 
     case 1:
-      return 'work'.tr(); // "İş"
+      return 'work'.tr(); 
     case 2:
-      return 'other'.tr(); // "Diğer"
+      return 'other'.tr(); 
     default:
       return '';
   }

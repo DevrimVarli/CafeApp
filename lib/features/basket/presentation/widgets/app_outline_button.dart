@@ -25,7 +25,7 @@ class AppOutlinedButton extends StatelessWidget {
           border: Border.all(color: Colors.grey.shade300),
         ),
         child: Row(
-          mainAxisSize: MainAxisSize.min, // İçerik kadar yer kaplasın
+          mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Icon(icon, size: 16, color: AppColors.textDark),
             const SizedBox(width: 6),

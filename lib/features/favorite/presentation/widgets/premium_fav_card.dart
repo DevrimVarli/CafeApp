@@ -2,6 +2,7 @@ import 'package:cafe_app/constants/app_colors.dart';
 import 'package:cafe_app/features/detail/presentation/detail_screen.dart';
 import 'package:cafe_app/features/favorite/presentation/widgets/fav_chip.dart';
 import 'package:cafe_app/features/home/domain/coffie_model.dart';
+import 'package:cafe_app/utils/currency_format_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_ce_flutter/adapters.dart';
@@ -180,7 +181,7 @@ class PremiumFavCard extends StatelessWidget {
                             ),
                           ),
                           child: Text(
-                            '\$ $price',
+                            price.toPrice,
                             style: GoogleFonts.sora(
                               fontSize: 14,
                               fontWeight: FontWeight.w900,

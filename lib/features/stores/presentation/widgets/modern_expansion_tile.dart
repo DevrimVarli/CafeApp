@@ -1,7 +1,7 @@
 import 'package:cafe_app/constants/app_colors.dart';
 import 'package:cafe_app/features/stores/domain/stores_model.dart';
 import 'package:cafe_app/features/stores/presentation/widgets/day_row.dart';
-import 'package:easy_localization/easy_localization.dart'; // Eklendi
+import 'package:easy_localization/easy_localization.dart'; 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -42,7 +42,7 @@ class _ModernExpansionTileState extends ConsumerState<ModernExpansionTile> {
                 ),
                 const SizedBox(width: 8),
                 Text(
-                  'hours_and_contact'.tr(), // "Çalışma saatleri & iletişim"
+                  'hours_and_contact'.tr(), 
                   style: TextStyle(
                     fontWeight: FontWeight.w900,
                     color: Colors.black.withValues(alpha: 0.70),

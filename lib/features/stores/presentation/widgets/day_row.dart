@@ -1,5 +1,5 @@
 import 'package:cafe_app/features/stores/domain/daily_hours_model.dart';
-import 'package:easy_localization/easy_localization.dart'; // Eklendi
+import 'package:easy_localization/easy_localization.dart'; 
 import 'package:flutter/material.dart';
 
 class DayRow extends StatelessWidget {
@@ -47,7 +47,7 @@ class DayRow extends StatelessWidget {
             child: Text(
               isClosed
                   ? 'closed_text'
-                        .tr() // "Kapalı"
+                        .tr() 
                   : '$open - $close',
               style: TextStyle(
                 fontSize: 12,

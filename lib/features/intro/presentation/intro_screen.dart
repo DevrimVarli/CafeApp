@@ -1,5 +1,5 @@
 import 'package:cafe_app/router/app_router_name.dart';
-import 'package:easy_localization/easy_localization.dart'; // Eklendi
+import 'package:easy_localization/easy_localization.dart'; 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -20,7 +20,7 @@ class IntroScreen extends StatelessWidget {
               child: Image.asset('assets/img/intro.png', fit: BoxFit.cover),
             ),
             Text(
-              'onboarding_title'.tr(), // "Mutluluk Dolu Bir Lezzetle..."
+              'onboarding_title'.tr(), 
               style: GoogleFonts.sora(
                 color: Colors.white,
                 fontSize: 32,
@@ -33,7 +33,7 @@ class IntroScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               child: Text(
-                'onboarding_welcome'.tr(), // "Her fincanın sizin için..."
+                'onboarding_welcome'.tr(),
                 style: GoogleFonts.sora(
                   color: Colors.grey,
                   fontSize: 14,
@@ -60,7 +60,7 @@ class IntroScreen extends StatelessWidget {
                     context.go(AppRouterName.home);
                   },
                   child: Text(
-                    'get_started'.tr(), // "Başla"
+                    'get_started'.tr(), 
                     style: const TextStyle(color: Colors.white),
                   ),
                 ),

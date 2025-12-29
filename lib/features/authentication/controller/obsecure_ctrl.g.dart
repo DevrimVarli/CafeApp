@@ -6,7 +6,7 @@ part of 'obsecure_ctrl.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$obsecureCtrlHash() => r'd29ca41084c8c389657d6c94ac99f3a452a3020e';
+String _$obsecureCtrlHash() => r'f815ab31f3562399448595176ab6e5e97d0ab1e5';
 
 /// See also [ObsecureCtrl].
 @ProviderFor(ObsecureCtrl)

@@ -12,8 +12,8 @@ Future<List<CityModel>> cityDataRepository(Ref ref) async {
   Response<dynamic> response = await dio.get('https://api.turkiyeapi.dev/v1/provinces');
 
   if (response.statusCode == 200) {
-    Map<String, dynamic> data = response.data as Map<String, dynamic>;   // önce Map'e cast et
-    List<dynamic> result = data['data'] as List<dynamic>;                  // sonra listeyi al
+    Map<String, dynamic> data = response.data as Map<String, dynamic>;   
+    List<dynamic> result = data['data'] as List<dynamic>;              
     return result.map((dynamic e) => CityModel.fromJson(e as Map<String,dynamic>)).toList();
   } else {
     throw Exception('Beklenmeyen veri formatı: ${response.statusCode}');

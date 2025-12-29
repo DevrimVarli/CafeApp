@@ -1,8 +1,8 @@
 import 'package:cafe_app/constants/app_colors.dart';
-import 'package:cafe_app/features/account/presentation/widgets/login_label.dart';
-import 'package:cafe_app/features/account/presentation/widgets/login_or_divider.dart';
-import 'package:cafe_app/features/account/presentation/widgets/login_social_button.dart';
-import 'package:cafe_app/features/account/presentation/widgets/login_text_field_fancy.dart';
+import 'package:cafe_app/features/authentication/presentation/widgets/login_label.dart';
+import 'package:cafe_app/features/authentication/presentation/widgets/login_or_divider.dart';
+import 'package:cafe_app/features/authentication/presentation/widgets/login_social_button.dart';
+import 'package:cafe_app/features/authentication/presentation/widgets/login_text_field_fancy.dart';
 import 'package:cafe_app/utils/validators.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -94,7 +94,6 @@ class LoginFormCard extends StatelessWidget {
               ),
             ),
 
-            // ✅ Register ise Name Surname alanı göster
             if (!isLogin) ...<Widget>[
               LoginLabel('name_surname'.tr()),
               LoginTextFieldFancy(
@@ -133,7 +132,6 @@ class LoginFormCard extends StatelessWidget {
               ),
             ),
 
-            // ✅ Login ise Remember + Forgot göster
             if (isLogin) ...<Widget>[
               Row(
                 children: <Widget>[

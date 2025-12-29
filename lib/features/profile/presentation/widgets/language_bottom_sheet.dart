@@ -1,9 +1,8 @@
+import 'package:cafe_app/constants/app_colors.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class LanguageBottomSheet {
-  static const Color primaryOrange = Color(0xFFC67C4E);
-
   static void show(BuildContext context) {
     showModalBottomSheet<void>(
       context: context,
@@ -46,12 +45,12 @@ class LanguageBottomSheet {
     return DecoratedBox(
       decoration: BoxDecoration(
         color: isSelected
-            ? primaryOrange.withValues(alpha: 0.1)
+            ? AppColors.primaryOrange.withValues(alpha: 0.1)
             : Colors.transparent,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
           color: isSelected
-              ? primaryOrange
+              ? AppColors.primaryOrange
               : Colors.grey.withValues(alpha: 0.2),
         ),
       ),
@@ -68,11 +67,11 @@ class LanguageBottomSheet {
           displayName,
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            color: isSelected ? primaryOrange : Colors.black87,
+            color: isSelected ? AppColors.primaryOrange : Colors.black87,
           ),
         ),
         trailing: isSelected
-            ? const Icon(Icons.check_circle, color: primaryOrange)
+            ? const Icon(Icons.check_circle, color: AppColors.primaryOrange)
             : null,
       ),
     );

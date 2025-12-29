@@ -2,7 +2,7 @@ import 'package:cafe_app/constants/app_colors.dart';
 import 'package:cafe_app/features/adress/controller/selected_address.dart';
 import 'package:cafe_app/features/adress/domain/address_model.dart';
 import 'package:cafe_app/utils/get_address_type.dart';
-import 'package:easy_localization/easy_localization.dart'; // Eklendi
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_ce_flutter/hive_flutter.dart';
@@ -36,7 +36,7 @@ class _AdressChangeScreenState extends ConsumerState<AdressChangeScreen> {
         title: Padding(
           padding: const EdgeInsets.only(left: 8),
           child: Text(
-            'delivery_addresses'.tr(), // "Teslimat Adresleri"
+            'delivery_addresses'.tr(),
             style: TextStyle(
               color: Colors.grey[900],
               fontWeight: FontWeight.w800,
@@ -112,7 +112,7 @@ class _AdressChangeScreenState extends ConsumerState<AdressChangeScreen> {
           ),
           const SizedBox(height: 20),
           Text(
-            'address_not_found'.tr(), // "Adres Bulunamadı"
+            'address_not_found'.tr(), 
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
@@ -122,7 +122,7 @@ class _AdressChangeScreenState extends ConsumerState<AdressChangeScreen> {
           const SizedBox(height: 8),
           Text(
             'start_by_adding_address'
-                .tr(), // "Yeni bir adres ekleyerek başlayın."
+                .tr(),
             style: TextStyle(color: Colors.grey[500]),
           ),
         ],

@@ -1,5 +1,5 @@
 import 'package:cafe_app/common/bottom_tab_shell_layout.dart';
-import 'package:cafe_app/features/account/presentation/account_screen.dart';
+import 'package:cafe_app/features/authentication/presentation/account_screen.dart';
 import 'package:cafe_app/features/adress/domain/address_model.dart';
 import 'package:cafe_app/features/adress/presentation/adress_change_screen.dart';
 import 'package:cafe_app/features/adress/presentation/adress_screen.dart';
@@ -67,13 +67,13 @@ GoRouter appRoutes = GoRouter(
         GoRoute(
           path: AppRouterName.basket,
           builder: (BuildContext context, GoRouterState state) {
-            return const BasketScreen(); // sanırım burası ileride profil olacak :)
+            return const BasketScreen(); 
           },
         ),
         GoRoute(
           path: AppRouterName.account,
           builder: (BuildContext context, GoRouterState state) {
-            return const AccountScreen(); // sanırım burası ileride profil olacak :)
+            return const AccountScreen(); 
           },
         ),
       ],

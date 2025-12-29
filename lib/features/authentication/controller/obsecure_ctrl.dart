@@ -4,7 +4,7 @@ part 'obsecure_ctrl.g.dart';
 class ObsecureCtrl extends _$ObsecureCtrl {
   @override
   bool build() {
-    return false;
+    return true;
   }
 
   void change() {

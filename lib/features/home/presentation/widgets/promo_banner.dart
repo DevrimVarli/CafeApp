@@ -8,7 +8,7 @@ class PromoBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 156, // Sabit yükseklik vermek tasarımı korur
+      height: 156,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(32),
         image: const DecorationImage(
@@ -41,7 +41,7 @@ class PromoBanner extends StatelessWidget {
               'buy_one_get_one_free'.tr(),
               style: GoogleFonts.sora(
                 color: Colors.black,
-                fontSize: 28, // Font boyutunu biraz dengeledim
+                fontSize: 28, 
                 fontWeight: FontWeight.bold,
               ),
             ),

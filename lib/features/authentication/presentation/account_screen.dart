@@ -1,7 +1,7 @@
-import 'package:cafe_app/features/account/controller/auth_provider.dart';
-import 'package:cafe_app/features/account/controller/is_login.dart';
-import 'package:cafe_app/features/account/presentation/login_screen.dart';
-import 'package:cafe_app/features/account/presentation/register_screen.dart';
+import 'package:cafe_app/features/authentication/controller/auth_provider.dart';
+import 'package:cafe_app/features/authentication/controller/is_login.dart';
+import 'package:cafe_app/features/authentication/presentation/login_screen.dart';
+import 'package:cafe_app/features/authentication/presentation/register_screen.dart';
 import 'package:cafe_app/features/profile/presentation/profile_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';

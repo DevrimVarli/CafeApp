@@ -2,7 +2,7 @@ import 'package:cafe_app/constants/app_colors.dart';
 import 'package:cafe_app/features/basket/domain/basket_coffie_model.dart';
 import 'package:cafe_app/utils/calculate_total_price.dart';
 import 'package:cafe_app/utils/currency_format_extension.dart';
-import 'package:easy_localization/easy_localization.dart'; // Eklendi
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_ce/hive.dart';
@@ -24,7 +24,7 @@ class _PaymentSummarySectionState extends State<PaymentSummarySection> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-          'payment_summary'.tr(), // "Ödeme Özeti"
+          'payment_summary'.tr(), 
           style: GoogleFonts.sora(
             fontWeight: FontWeight.bold,
             fontSize: 18,
@@ -34,7 +34,7 @@ class _PaymentSummarySectionState extends State<PaymentSummarySection> {
         const SizedBox(height: 12),
 
         if (coffieList.isEmpty)
-          Text('basket_empty'.tr()) // "Sepet boş"
+          Text('basket_empty'.tr()) 
         else
           ListView.builder(
             shrinkWrap: true,
@@ -57,7 +57,7 @@ class _PaymentSummarySectionState extends State<PaymentSummarySection> {
         ),
 
         _buildRow(
-          'total_payment'.tr(), // "Toplam Ödeme"
+          'total_payment'.tr(), 
           calculateTotalPrice(widget.sepetBox).toPrice,
           isTotal: true,
         ),

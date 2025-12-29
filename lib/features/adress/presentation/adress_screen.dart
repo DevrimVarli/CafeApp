@@ -12,7 +12,7 @@ import 'package:cafe_app/features/adress/presentation/widgets/location_section.d
 import 'package:cafe_app/features/adress/presentation/widgets/premium_snack.dart';
 import 'package:cafe_app/features/adress/presentation/widgets/save_address_button.dart';
 import 'package:cafe_app/utils/validators.dart';
-import 'package:easy_localization/easy_localization.dart'; // Eklendi
+import 'package:easy_localization/easy_localization.dart'; 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -77,12 +77,12 @@ class _AddressScreenState extends ConsumerState<AddressScreen> {
     int type = ref.read(selectedAddresTypeProvider);
 
     if (city.trim().isEmpty || district.trim().isEmpty) {
-      showPremiumSnack(context, 'please_select_city_district'.tr()); // JSON
+      showPremiumSnack(context, 'please_select_city_district'.tr()); 
       return;
     }
 
     if (!_formKey.currentState!.validate()) {
-      showPremiumSnack(context, 'missing_fields_warning'.tr()); // JSON
+      showPremiumSnack(context, 'missing_fields_warning'.tr()); 
       return;
     }
 
@@ -110,7 +110,7 @@ class _AddressScreenState extends ConsumerState<AddressScreen> {
       context,
       'address_saved_success'.tr(),
       success: true,
-    ); // JSON
+    ); 
     context.pop();
   }
 
@@ -125,7 +125,7 @@ class _AddressScreenState extends ConsumerState<AddressScreen> {
 
     return Scaffold(
       backgroundColor: const Color(0xFFF6F6F8),
-      appBar: AddressAppBar(title: 'new_address'.tr()), // JSON (const kalktı)
+      appBar: AddressAppBar(title: 'new_address'.tr()), 
       bottomNavigationBar: SafeArea(
         top: false,
         child: Padding(
@@ -148,8 +148,8 @@ class _AddressScreenState extends ConsumerState<AddressScreen> {
                   children: <Widget>[
                     FancyField(
                       controller: _titleCtrl,
-                      label: 'address_title'.tr(), // JSON
-                      hint: 'address_title_hint'.tr(), // JSON
+                      label: 'address_title'.tr(),
+                      hint: 'address_title_hint'.tr(), 
                       prefix: Icons.bookmark_border_rounded,
                       validator: AddressValidators.title,
                     ),
@@ -158,8 +158,8 @@ class _AddressScreenState extends ConsumerState<AddressScreen> {
                         Expanded(
                           child: FancyField(
                             controller: _nameCtrl,
-                            label: 'name_surname'.tr(), // JSON
-                            hint: 'name_surname_placeholder'.tr(), // JSON
+                            label: 'name_surname'.tr(), 
+                            hint: 'name_surname_placeholder'.tr(), 
                             prefix: Icons.person_outline_rounded,
                             validator: AddressValidators.fullName,
                           ),
@@ -167,8 +167,8 @@ class _AddressScreenState extends ConsumerState<AddressScreen> {
                         Expanded(
                           child: FancyField(
                             controller: _phoneCtrl,
-                            label: 'phone'.tr(), // JSON
-                            hint: 'phone_hint'.tr(), // JSON
+                            label: 'phone'.tr(), 
+                            hint: 'phone_hint'.tr(), 
                             prefix: Icons.phone_rounded,
                             keyboardType: TextInputType.phone,
                             validator: AddressValidators.phone,
@@ -181,7 +181,7 @@ class _AddressScreenState extends ConsumerState<AddressScreen> {
               ),
             ),
             CardShell(
-              title: 'location'.tr(), // JSON: Konum
+              title: 'location'.tr(), 
               child: LocationSection(
                 asyncCities: asyncCities,
                 city: city,

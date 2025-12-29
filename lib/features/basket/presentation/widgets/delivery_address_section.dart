@@ -2,7 +2,7 @@ import 'package:cafe_app/constants/app_colors.dart';
 import 'package:cafe_app/features/adress/controller/selected_address.dart';
 import 'package:cafe_app/features/adress/domain/address_model.dart';
 import 'package:cafe_app/router/app_router_name.dart';
-import 'package:easy_localization/easy_localization.dart'; // Eklendi
+import 'package:easy_localization/easy_localization.dart'; 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -34,7 +34,7 @@ class DeliveryAddressSection extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
-              'delivery_address'.tr(), // "Teslimat Adresi"
+              'delivery_address'.tr(), 
               style: GoogleFonts.sora(
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
@@ -82,7 +82,7 @@ class DeliveryAddressSection extends ConsumerWidget {
                 ),
                 OutlinedBtn(
                   icon: Icons.change_circle,
-                  text: 'change'.tr(), // "Değiştir"
+                  text: 'change'.tr(), 
                   onTap: () {
                     context.push(AppRouterName.change);
                   },
@@ -96,7 +96,7 @@ class DeliveryAddressSection extends ConsumerWidget {
               children: <Widget>[
                 OutlinedBtn(
                   icon: Icons.edit_location_outlined,
-                  text: 'edit_address'.tr(), // "Adresi Düzenle"
+                  text: 'edit_address'.tr(), 
                   onTap:
                       () => context.pushNamed(
                         AppRouterName.address,
@@ -106,7 +106,7 @@ class DeliveryAddressSection extends ConsumerWidget {
                 const SizedBox(width: 12),
                 OutlinedBtn(
                   icon: Icons.note_add_outlined,
-                  text: 'add_address'.tr(), // "Adres Ekle"
+                  text: 'add_address'.tr(), 
                   onTap: () => context.push(AppRouterName.address),
                 ),
               ],
@@ -168,7 +168,7 @@ class _EmptyAddress extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-          'delivery_address'.tr(), // "Teslimat Adresi"
+          'delivery_address'.tr(),
           style: GoogleFonts.sora(
             fontWeight: FontWeight.bold,
             fontSize: 18,
@@ -177,7 +177,7 @@ class _EmptyAddress extends StatelessWidget {
         ),
         const SizedBox(height: 10),
         Text(
-          'address_not_found'.tr(), // "Adres Bulunamadı"
+          'address_not_found'.tr(),
           style: GoogleFonts.sora(
             fontWeight: FontWeight.w700,
             fontSize: 14,
@@ -186,7 +186,7 @@ class _EmptyAddress extends StatelessWidget {
         ),
         const SizedBox(height: 6),
         Text(
-          'start_by_adding_address'.tr(), // "Yeni bir adres ekleyerek başlayın."
+          'start_by_adding_address'.tr(),
           style: GoogleFonts.sora(
             fontWeight: FontWeight.w500,
             fontSize: 13,
@@ -196,7 +196,7 @@ class _EmptyAddress extends StatelessWidget {
         const SizedBox(height: 14),
         OutlinedBtn(
           icon: Icons.add_location_alt_outlined,
-          text: 'add_address'.tr(), // "Adres Ekle"
+          text: 'add_address'.tr(),
           onTap: onAdd,
         ),
       ],
